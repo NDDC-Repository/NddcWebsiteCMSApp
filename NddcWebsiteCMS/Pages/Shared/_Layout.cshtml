@@ -167,11 +167,11 @@
                                     <i data-feather="home" class="icon-dual"></i> <span data-key="t-dashboards">Dashboard</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                           @*  <li class="nav-item">
                                 <a class="nav-link menu-link @ViewData["Employees"]" href="/Employee/Employees">
-                                    <i data-feather="user" class="icon-dual"></i> <span data-key="t-dashboards">Employee</span>
+                                    <i data-feather="user" class="icon-dual"></i> <span data-key="t-dashboards">Featured Projects</span>
                                 </a>
-                            </li>
+                            </li> *@
                             @if (User.IsInRole("Admin") || User.IsInRole("Super"))
                             {
                                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Reports</span></li>
@@ -187,32 +187,48 @@
 
                             <!-- Company Menu -->
 
-                            <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Company</span></li>
+                            <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Home Page</span></li>
                             <li class="nav-item">
-                                <a class="nav-link menu-link @ViewData["JobTitles"]" href="/Company/JobTitles">
-                                    <i data-feather="users" class="icon-dual"></i> <span data-key="t-dashboards">Job Titles</span>
+                                <a class="nav-link menu-link @ViewData["JobTitles"]" href="/Home/News/AllNews">
+                                    <i data-feather="users" class="icon-dual"></i> <span data-key="t-dashboards">News</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu-link @ViewData["GradeLevel"]" href="/Company/GradeLevels">
-                                    <i data-feather="align-justify" class="icon-dual"></i> <span data-key="t-dashboards">Grade Level</span>
+                                    <i data-feather="align-justify" class="icon-dual"></i> <span data-key="t-dashboards">Updates</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu-link @ViewData["Departments"]" href="/Company/Departments">
-                                    <i data-feather="server" class="icon-dual"></i> <span data-key="t-dashboards">Departments</span>
+                                    <i data-feather="server" class="icon-dual"></i> <span data-key="t-dashboards">Photo Speak</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu-link @ViewData["Pensions"]" href="/Company/PensionAdmins">
-                                    <i data-feather="life-buoy" class="icon-dual"></i> <span data-key="t-dashboards">Pension Fund Administrators</span>
+                                    <i data-feather="life-buoy" class="icon-dual"></i> <span data-key="t-dashboards">Testimonials</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link menu-link @ViewData["Banks"]" href="/Company/Banks">
-                                    <i data-feather="dollar-sign" class="icon-dual"></i> <span data-key="t-dashboards">Banks</span>
+                                    <i data-feather="dollar-sign" class="icon-dual"></i> <span data-key="t-dashboards">Publications</span>
                                 </a>
                             </li>
+                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Who We are</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link @ViewData["JobTitles"]" href="/Company/JobTitles">
+                                <i data-feather="users" class="icon-dual"></i> <span data-key="t-dashboards">Our People</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link @ViewData["GradeLevel"]" href="/Company/GradeLevels">
+                                <i data-feather="align-justify" class="icon-dual"></i> <span data-key="t-dashboards">Mission & Vision</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link @ViewData["Departments"]" href="/Company/Departments">
+                                <i data-feather="server" class="icon-dual"></i> <span data-key="t-dashboards">Master Plan</span>
+                            </a>
+                        </li>
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Payroll</span></li>
