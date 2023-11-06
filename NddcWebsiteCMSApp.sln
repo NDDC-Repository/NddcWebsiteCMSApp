@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NddcWebsiteCMS", "NddcWebsiteCMS\NddcWebsiteCMS.csproj", "{9E0ECB4B-772E-469F-BC2C-88014CEE584C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E0ECB4B-772E-469F-BC2C-88014CEE584C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0ECB4B-772E-469F-BC2C-88014CEE584C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0ECB4B-772E-469F-BC2C-88014CEE584C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0ECB4B-772E-469F-BC2C-88014CEE584C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE2BC039-929D-4C78-A47A-EB939B9BA753}
+	EndGlobalSection
+EndGlobal
