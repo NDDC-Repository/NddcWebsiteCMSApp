@@ -8,5 +8,10 @@ namespace NddcWebsiteCMS.Pages.Home.News
         public void OnGet()
         {
         }
+
+        public void OnPost()
+        {
+
+        }
     }
 }
