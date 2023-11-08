@@ -12,7 +12,6 @@
     <Folder Include="Pages\Gallery\PhotoAlbum\" />
     <Folder Include="Pages\Home\Publications\" />
     <Folder Include="Pages\Home\Testimonial\" />
-    <Folder Include="Pages\Home\PhotoSpeak\" />
     <Folder Include="wwwroot\images\news\" />
   </ItemGroup>
 

@@ -18,8 +18,8 @@
         </div>
     </div>
 </div>
-
-<div class="card">
+<div class="row">
+    <div class="card col-9">
     <div class="card-body">
         <form action="javascript:void(0);">
             <div class="row">
@@ -84,6 +84,7 @@
                 </div><!--end col-->
 
                 <!--Editor-->
+               <div id="editor" style="height: 200px"
                 <div class="col-12">
                     <div class="card-body">
                       <p class="text-muted">Details</p>
@@ -515,6 +516,8 @@
         </form>
     </div>
 </div>
+</div>
+
 
 
 @section Scripts {
@@ -534,12 +537,12 @@
     <div class="ck-body-wrapper"><div class="ck ck-reset_all ck-body ck-rounded-corners" dir="ltr"><div class="ck ck-balloon-panel ck-balloon-panel_arrow_nw ck-balloon-panel_with-arrow" style="top: 0px; left: 0px;"><div class="ck ck-balloon-rotator" z-index="-1"><div class="ck-balloon-rotator__navigation ck-hidden"><button class="ck ck-button ck-off" type="button" tabindex="-1" aria-labelledby="ck-editor__aria-label_e824640a2b0b47457b724faaeaf9e2eae"><svg class="ck ck-icon ck-button__icon" viewBox="0 0 20 20"><path d="M11.463 5.187a.888.888 0 1 1 1.254 1.255L9.16 10l3.557 3.557a.888.888 0 1 1-1.254 1.255L7.26 10.61a.888.888 0 0 1 .16-1.382l4.043-4.042z"></path></svg><span class="ck ck-tooltip ck-tooltip_s"><span class="ck ck-tooltip__text">Previous</span></span><span class="ck ck-button__label" id="ck-editor__aria-label_e824640a2b0b47457b724faaeaf9e2eae">Previous</span></button><span class="ck-balloon-rotator__counter"></span><button class="ck ck-button ck-off" type="button" tabindex="-1" aria-labelledby="ck-editor__aria-label_ef6a03a8ee100c790bfda5541ecb0aaa7"><svg class="ck ck-icon ck-button__icon" viewBox="0 0 20 20"><path d="M8.537 14.813a.888.888 0 1 1-1.254-1.255L10.84 10 7.283 6.442a.888.888 0 1 1 1.254-1.255L12.74 9.39a.888.888 0 0 1-.16 1.382l-4.043 4.042z"></path></svg><span class="ck ck-tooltip ck-tooltip_s"><span class="ck ck-tooltip__text">Next</span></span><span class="ck ck-button__label" id="ck-editor__aria-label_ef6a03a8ee100c790bfda5541ecb0aaa7">Next</span></button></div><div class="ck-balloon-rotator__content"></div></div></div><div class="ck-fake-panel ck-hidden" style="top: 0px; left: 0px; width: 0px; height: 0px;"></div></div></div>
     <!--App.js-->
     <script src="assets/js/app.js"></script>
-    <script>
-      var quill = new Quill('#editor', {
-        theme: 'snow'
-      });
-    </script>
     <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
     <script src="//cdn.quilljs.com/1.3.6/quill.core.js"></script>
+    <script>
+   var quill = new Quill('#editor', {
+      theme: 'snow'
+   });
+</script>
 }
