@@ -10,8 +10,6 @@
     <Folder Include="Pages\Gallery\SightsAndIcons\" />
     <Folder Include="Pages\Gallery\Videos\" />
     <Folder Include="Pages\Gallery\PhotoAlbum\" />
-    <Folder Include="Pages\Home\Publications\" />
-    <Folder Include="Pages\Home\Testimonial\" />
     <Folder Include="wwwroot\images\news\" />
   </ItemGroup>
 

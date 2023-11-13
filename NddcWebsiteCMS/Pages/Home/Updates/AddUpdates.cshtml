@@ -6,16 +6,68 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-            <h4 class="mb-sm-0">All Updates</h4>
+            <h4 class="mb-sm-0">Add Updates</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Updates</a></li>
-                    <li class="breadcrumb-item active">All Updates</li>
+                    <li class="breadcrumb-item"><a href="/Home/Updates/AllUpdates">Updates</a></li>
+                    <li class="breadcrumb-item active">Add Updates</li>
                 </ol> 
             </div>
 
         </div>
     </div>
+</div>
+
+<div class="row">
+    <div class="card col-9">
+    <div class="card-body">
+        <form action="javascript:void(0);">
+            <div class="row">
+                <div class="col-12">
+                    <label for="compnayNameinput" class="form-label">Update Type</label>
+                    <select class="form-select mb-3" aria-label="Updates Details">
+                        <option selected="">Select</option>
+                        <option value="1">Physical Infrastructure </option>
+                        <option value="2">Social Infrastructure</option>
+                        <option value="3">Global Partnerships</option>
+                    </select>
+                </div><!--end col-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="firstNameinput" class="form-label">Update Title</label>
+                        <input type="text" class="form-control" placeholder="Enter News Subject(75 char.)" id="firstNameinput">
+                    </div>
+                </div><!--end col-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="lastNameinput" class="form-label">Update Summary</label>
+                        <textarea class="form-control" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3"></textarea>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="lastNameinput" class="form-label">Update Details</label>
+                        <textarea class="form-control" placeholder="Enter Update Details " id="exampleFormControlTextarea5" rows="3"></textarea>
+                    </div>
+                </div><!--end col-->
+                
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label" for="customFile">Add Update Image</label>
+                        <input type="file" class="form-control" id="customFile" /></div>
+                </div>
+               
+               
+            </div>
+            <div class="col-lg-12">
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div><!--end col-->
+        </form>
+    </div>
+</div>
 </div>
 
