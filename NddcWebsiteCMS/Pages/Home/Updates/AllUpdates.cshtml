@@ -20,17 +20,37 @@
 </div>
 
 <div class="row">
-    <div class="">
     <div class="card">
-        <div class="card-header align-items-center d-flex">
-            <h4 class="card-title mb-0 flex-grow-1">Latest Updates</h4>
-            <div>
-                <a href="/Home/News/AddUpdates" type="button" class="btn btn-soft-primary btn-sm">
-                   Add Updates
-                </a>
-            </div>
-        </div><!-- end card-header -->
-
+            <div class=" text-center ">
+                <ul class="nav nav-tabs nav-border-top nav-justified card-header-tabs mb-3" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#base-justified-product" role="tab" aria-selected="true">
+                            All Updates
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#base-justified-home" role="tab" aria-selected="false" tabindex="-1">
+                            Physical Infrastructure 
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#base-justified-messages" role="tab" aria-selected="false" tabindex="-1">
+                            Social Infrastructure
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" data-bs-toggle="tab" href="#base-justified-settings" role="tab" aria-selected="false" tabindex="-1">
+                            Global Partnerships
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="/Home/Updates/AddUpdates" type="button" class="btn btn-soft-primary btn-sm nav-link">
+                    Add Updates
+                    </a>
+                </li>
+                </ul>
+                    
+            </div><!-- end card-header -->
         <div class="card-body">
             <div class="d-flex align-middle">
                 <div class="flex-shrink-0">
@@ -215,8 +235,6 @@
                 <a href="javascript:void(0);" class="text-muted text-decoration-underline">View
                     all News</a>
             </div>
-
-        </div>
-       </div><!-- end card body -->
+        </div><!-- end card body -->
     </div><!-- end card -->
 </div>
