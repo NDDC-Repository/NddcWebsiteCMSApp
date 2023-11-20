@@ -21,25 +21,25 @@
 <div class="row">
     <div class="card col-9">
     <div class="card-body">
-        <form action="javascript:void(0);">
+            <form method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">News Title</label>
-                        <input type="text" class="form-control" placeholder="Enter News Subject(75 char.)" id="firstNameinput">
+                        <input type="text" class="form-control" asp-for="@Model.News.Subject" placeholder="Enter News Subject(75 char.)" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="lastNameinput" class="form-label">News Summary</label>
-                        <textarea class="form-control" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3"></textarea>
+                        <textarea class="form-control" asp-for="@Model.News.Summary" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3"></textarea>
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">Set As Slider</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
-                        <option selected="">NO </option>
-                        <option value="2">YES</option>
+                    <select class="form-select mb-3" asp-for="@Model.News.SetAsSlide" aria-label="Default select example">
+                        <option selected="0">NO </option>
+                        <option value="1">YES</option>
                     </select>
                     @*<div class="mb-3">
                         <label for="compnayNameinput" class="form-label">Company Name</label>
@@ -48,7 +48,7 @@
                 </div><!--end col-->
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">News Department</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3" asp-for="@Model.News.NDID" aria-label="Default select example">
                         <option selected="">Select</option>
                         <option value="2">Corporate Affairs Department</option>
                     </select>
@@ -59,7 +59,7 @@
                 </div><!--end col-->
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">News Type</label>
-                    <select class="form-select mb-3" aria-label="Default select example">
+                    <select class="form-select mb-3" asp-for="@Model.News.Type" aria-label="Default select example">
                         <option selected="">Select</option>
                         <option value="1">Press Statement</option>
                         <option value="2">Press Release</option>
@@ -73,21 +73,26 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="address1ControlTextarea" class="form-label">Publish Date</label>
-                        <input type="text" class="form-control" placeholder="Set Publish Date" id="address1ControlTextarea">
+                        <input type="date" class="form-control" asp-for="@Model.News.PublishDate" placeholder="Set Publish Date" id="address1ControlTextarea">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="citynameInput" class="form-label">Expiry Date</label>
-                        <input type="email" class="form-control" placeholder="Post Expiry Date" id="citynameInput">
+                        <input type="date" class="form-control" asp-for="@Model.News.ExpiryDate" placeholder="Post Expiry Date" id="citynameInput">
                     </div>
                 </div><!--end col-->
-                
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="customFile">Add Image</label>
+                            <input type="file" asp-for="Upload" class="form-control" id="customFile" />
+                        </div>
+                    </div>
                 <!--Editor-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="citynameInput" class="form-label">News Details</label>
-                        <div id="editor"></div>
+                        <label id="editor" asp-for="@Model.News.Details"></label>
                     </div>
                 </div><!--end col-->
 

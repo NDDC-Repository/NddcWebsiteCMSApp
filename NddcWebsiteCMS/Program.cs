@@ -1,7 +1,16 @@
+using WebsiteCMSLibrary.Data.HomePage;
+using WebsiteCMSLibrary.Databases;
+using WebsiteCMSLibrary.Services.AWSStorageService;
+using WebsiteCMSLibrary.Services.AzureStorageService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddTransient<INewsData, SQLNews>();
+//builder.Services.AddTransient<IAzureStorage, AzureStorage>();
+builder.Services.AddTransient<IAzureStorage, AWSStorage>();
 
 var app = builder.Build();
 

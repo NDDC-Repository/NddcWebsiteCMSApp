@@ -13,4 +13,8 @@
     <Folder Include="wwwroot\images\news\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebsiteCMSLibrary\WebsiteCMSLibrary.csproj" />
+  </ItemGroup>
+
 </Project>
