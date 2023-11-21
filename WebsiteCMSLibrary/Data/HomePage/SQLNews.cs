@@ -44,7 +44,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public void DeleteNews(int id)
         {
-            db.SaveData("Delete News Where Id = @Id", new { Id = id }, connectionStringName, false);
+            db.SaveData("Delete News Where NID = @NID", new { NID = id }, connectionStringName, false);
         }
         public void UpdateNews(int id)
         {

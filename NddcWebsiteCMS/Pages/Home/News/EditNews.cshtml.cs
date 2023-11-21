@@ -23,5 +23,15 @@ namespace NddcWebsiteCMS.Pages.Home.News
         {
             News = newsDb.GetNewsDetails(nid.Value);
         }
+        public IActionResult OnPostUpdate(int? nid)
+        {
+            newsDb.UpdateNews(nid.Value);
+            return RedirectToPage("AllNews");
+        }
+        public IActionResult OnPostDelete (int? nid)
+        {
+            newsDb.DeleteNews(nid.Value);
+            return RedirectToPage("AllNews");
+        }
     }
 }

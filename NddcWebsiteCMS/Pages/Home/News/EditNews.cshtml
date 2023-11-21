@@ -98,7 +98,12 @@
 
                     <div class="col-lg-12">
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <form asp-page-handler="update" method="post">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </form>
+                            <form asp-page-handler="delete" method="post">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
