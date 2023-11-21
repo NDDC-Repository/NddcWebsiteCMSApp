@@ -8,7 +8,7 @@ namespace WebsiteCMSLibrary.Model.HomePage
 {
     public class MyNewsModel
     {
-        public int Id { get; set; }
+        public int NID { get; set; }
         public string Subject { get; set; }
         public string Summary { get; set; }
         public string NewsId { get; set; }

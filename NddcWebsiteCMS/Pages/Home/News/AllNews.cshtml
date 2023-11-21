@@ -41,16 +41,16 @@
                         <div class="flex-grow-1 ms-3 d-flex justify-content-between">
                             <div>
                                 <h6 class="mb-1 lh-base">
-                                    <a href="#" class="text-reset">
+                                    <a a asp-page="EditNews" asp-route-nid="@item.NID" class="text-reset">
                                        @item.Subject
                                     </a>
                                 </h6>
                                 <p class="text-muted fs-12 mb-0">@item.PublishDate <i class="mdi mdi-circle-medium align-middle mx-1"></i></p>
-
+                                <p class="text-muted fs-14 mb-0">@item.Summary <i class="mdi mdi-circle-medium align-middle mx-1"></i></p>
                             </div>
                             <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
+                                <a asp-page="EditNews" asp-route-nid="@item.NID" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
+                                    <i class="bx bx-dots-horizontal-rounded">Update</i>
                                 </a>
                             </div>
                         </div>

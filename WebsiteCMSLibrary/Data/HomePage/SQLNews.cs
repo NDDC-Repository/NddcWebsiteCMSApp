@@ -28,7 +28,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public List<MyNewsModel> ListHomePageNews()
         {
-            return db.LoadData<MyNewsModel, dynamic>("select top 3 ROW_NUMBER() OVER (ORDER BY Id DESC) As SrNo, Id, Subject, Summary, ImageUrl, PublishDate, ExpiryDate, Views, Clicks, Type, SetAsSlide, from News OrderBy Id DESC", new { }, connectionStringName, false).ToList();
+            return db.LoadData<MyNewsModel, dynamic>("select top 3 ROW_NUMBER() OVER (ORDER BY NID DESC) As SrNo, NID, Subject, Summary, ImageUrl, PublishDate, ExpiryDate, Views, Clicks, Type, SetAsSlide, from News OrderBy Id DESC", new { }, connectionStringName, false).ToList();
         }
         public string GetBreakingNews()
         {
@@ -40,7 +40,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public MyNewsModel GetNewsDetails(int Id)
         {
-            return db.LoadData<MyNewsModel, dynamic>("select top 5 Id, Subject, Summary, ImageUrl, PublishDate from News OrderBy Id DESC", new { }, connectionStringName, false).SingleOrDefault();
+            return db.LoadData<MyNewsModel, dynamic>("select NID, Subject, Summary, ImageUrl, PublishDate from News where NID = @NID", new { NID = Id }, connectionStringName, false).SingleOrDefault();
         }
         public void DeleteNews(int id)
         {
