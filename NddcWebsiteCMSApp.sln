@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NddcWebsiteCMS", "NddcWebsiteCMS\NddcWebsiteCMS.csproj", "{9E0ECB4B-772E-469F-BC2C-88014CEE584C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsiteCMSLibrary", "WebsiteCMSLibrary\WebsiteCMSLibrary.csproj", "{14A05258-B58A-4F0A-96D2-6F359F1588C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebsiteCMSLibrary", "WebsiteCMSLibrary\WebsiteCMSLibrary.csproj", "{14A05258-B58A-4F0A-96D2-6F359F1588C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
