@@ -1,5 +1,6 @@
 ﻿using Amazon.S3;
 using Amazon.S3.Transfer;
+using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -23,11 +24,7 @@ namespace WebsiteCMSLibrary.Services.AWSStorageService
             _accessKey = configuration.GetConnectionString("AWSAccessKeyId");
             _secretAccessKey = configuration.GetConnectionString("AWSSecreteAccessKey");
         }
-        public Task<MyBlobResponseModel> DeleteAsync(string blobFilename)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public Task<MyBlobModel> DownloadAsync(string blobFilename)
         {
             throw new NotImplementedException();
@@ -61,6 +58,27 @@ namespace WebsiteCMSLibrary.Services.AWSStorageService
 
                     response.Blob.Uri = request.Key;
                 }
+            }
+
+            return response;
+        }
+
+        public async Task<MyBlobResponseModel> DeleteAsync(string fileName)
+        {
+            MyBlobResponseModel response = new();
+            string myFileName = fileName;
+
+            using (var amazonS3client = new AmazonS3Client(_accessKey, _secretAccessKey, Amazon.RegionEndpoint.EUNorth1))
+            {
+                var transferutility = new TransferUtility(amazonS3client);
+                await transferutility.S3Client.DeleteObjectAsync(new Amazon.S3.Model.DeleteObjectRequest()
+                {
+                    BucketName = _bucketName,
+                    Key = myFileName
+
+                });
+
+                response.Status = "Success";
             }
 
             return response;

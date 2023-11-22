@@ -11,6 +11,6 @@ namespace WebsiteCMSLibrary.Data.HomePage
         string GetBreakingNews();
         MyNewsModel GetNewsDetails(int Id);
         List<MyNewsModel> ListHomePageNews();
-        void UpdateNews(int id);
+        void UpdateNews(MyNewsModel news);
     }
 }

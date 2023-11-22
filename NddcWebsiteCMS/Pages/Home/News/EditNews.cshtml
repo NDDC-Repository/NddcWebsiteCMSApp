@@ -84,7 +84,7 @@
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
-                            <label class="form-label" for="customFile">Add Image</label>
+                            <input type="text" class="form-control" asp-for="@Model.News.ImageUrl" hidden="true">
                             <input type="file" asp-for="Upload" class="form-control" id="customFile" />
                         </div>
                     </div>
@@ -96,18 +96,22 @@
                         </div>
                     </div><!--end col-->
 
-                    <div class="col-lg-12">
-                        <div class="text-end">
-                            <form asp-page-handler="update" method="post">
+                    <div class="col-lg-12 d-flex ">
+                        <div class="ml-4">
+                            
                                 <button type="submit" class="btn btn-success">Update</button>
-                            </form>
-                            <form asp-page-handler="delete" method="post">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                           
+                           
                         </div>
+                       
                     </div><!--end col-->
                 </div><!--end row-->
             </form>
+            <div class="text-end">
+                <form asp-page-handler="delete" method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
