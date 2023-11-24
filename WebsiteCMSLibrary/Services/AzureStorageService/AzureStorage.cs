@@ -113,7 +113,7 @@ namespace WebsiteCMSLibrary.Services.AzureStorageService
             return files;
         }
 
-        public async Task<MyBlobResponseModel> UploadAsync(IFormFile blob)
+        public async Task<MyBlobResponseModel> UploadAsync(IFormFile blob, string myFileName)
         {
             // Create new upload response object that we can return to the requesting method
             MyBlobResponseModel response = new();
@@ -123,7 +123,7 @@ namespace WebsiteCMSLibrary.Services.AzureStorageService
             //await container.CreateAsync();
             try
             {
-                string fileName = "News/" + blob.FileName;
+                string fileName = myFileName;
                 // Get a reference to the blob just uploaded from the API in a container from configuration settings
                 BlobClient client = container.GetBlobClient(fileName);
 

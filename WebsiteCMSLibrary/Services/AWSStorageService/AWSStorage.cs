@@ -35,10 +35,10 @@ namespace WebsiteCMSLibrary.Services.AWSStorageService
             throw new NotImplementedException();
         }
 
-        public async Task<MyBlobResponseModel> UploadAsync(IFormFile file)
+        public async Task<MyBlobResponseModel> UploadAsync(IFormFile file, string fileName)
         {
             MyBlobResponseModel response = new();
-            string myFileName = "News/" + file.FileName;
+            string myFileName = fileName;
             using (var amazonS3client = new AmazonS3Client(_accessKey, _secretAccessKey, Amazon.RegionEndpoint.EUNorth1))
             {
 

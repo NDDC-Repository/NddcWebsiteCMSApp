@@ -8,6 +8,6 @@ namespace WebsiteCMSLibrary.Services.AzureStorageService
         Task<MyBlobResponseModel> DeleteAsync(string fileName);
         Task<MyBlobModel> DownloadAsync(string blobFilename);
         Task<List<MyBlobModel>> ListAsync();
-        Task<MyBlobResponseModel> UploadAsync(IFormFile blob);
+        Task<MyBlobResponseModel> UploadAsync(IFormFile blob, string fileName);
     }
 }

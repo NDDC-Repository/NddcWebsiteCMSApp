@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebsiteCMSLibrary.Data.HomePage;
+using WebsiteCMSLibrary.Helper;
 using WebsiteCMSLibrary.Model.AzureStorage;
 using WebsiteCMSLibrary.Model.HomePage;
 using WebsiteCMSLibrary.Services.AzureStorageService;
@@ -13,16 +14,18 @@ namespace NddcWebsiteCMS.Pages.Home.News
 
         private readonly INewsData newsDb;
         private readonly IAzureStorage storage;
+        private readonly IHelperData helpDb;
 
         [BindProperty(SupportsGet = true)]
         public MyNewsModel News { get; set; }
 
         public IFormFile Upload { get; set; }
-        public EditNewsModel(IConfiguration configuration, INewsData newsDb, IAzureStorage storage)
+        public EditNewsModel(IConfiguration configuration, INewsData newsDb, IAzureStorage storage, IHelperData helpDb)
         {
             this.configuration = configuration;
             this.newsDb = newsDb;
             this.storage = storage;
+            this.helpDb = helpDb;
         }
         public void OnGet(int? nid)
         {
@@ -32,7 +35,8 @@ namespace NddcWebsiteCMS.Pages.Home.News
         {
             if (Upload is not null)
             {
-                MyBlobResponseModel? response = await storage.UploadAsync(Upload);
+                string fileName = "News/" + helpDb.RandomNumber(0, 1000) + Upload.FileName;
+                MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
                 News.ImageUrl = response.Blob.Uri;
             }
             News.NID = nid.Value;
