@@ -25,8 +25,16 @@
         <form action="javascript:void(0);">
             <div class="row">
                 <div class="col-12">
-                    <label for="compnayNameinput" class="form-label">Update Type</label>
-                    <select class="form-select mb-3" aria-label="Updates Details">
+                    <label for="compnayNameinput" class="form-label">Type of Update  </label>
+                    <select class="form-select mb-3" aria-label="Updates Type">
+                        <option selected="">Select</option>
+                        <option value="1">Project </option>
+                        <option value="2">Program</option>
+                    </select>
+                </div><!--end col-->
+                <div class="col-12">
+                    <label for="compnayNameinput" class="form-label">Update Category </label>
+                    <select class="form-select mb-3" aria-label="Category">
                         <option selected="">Select</option>
                         <option value="1">Physical Infrastructure </option>
                         <option value="2">Social Infrastructure</option>
@@ -34,40 +42,113 @@
                     </select>
                 </div><!--end col-->
                 <div class="col-12">
+                    <label for="compnayNameinput" class="form-label">Program/Project Type  </label>
+                    <select class="form-select mb-3" aria-label="Updates Type">
+                        <option selected="">Select</option>
+                        <option value="1">Project </option>
+                        <option value="2">Program</option>
+                    </select>
+                </div><!--end col-->
+                <div class="col-12">
                     <div class="mb-3">
-                        <label for="firstNameinput" class="form-label">Update Title</label>
-                        <input type="text" class="form-control" placeholder="Enter News Subject(75 char.)" id="firstNameinput">
+                        <label for="firstNameinput" class="form-label">Project Title</label>
+                        <input type="text" class="form-control" placeholder="Enter Project Title(75 char.)" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
-                        <label for="lastNameinput" class="form-label">Update Summary</label>
-                        <textarea class="form-control" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3"></textarea>
+                        <label for="firstNameinput" class="form-label">Project Location</label>
+                        <input type="text" class="form-control" placeholder="Enter Project Location(75 char.)" id="firstNameinput">
                     </div>
                 </div><!--end col-->
-
                 <div class="col-12">
                     <div class="mb-3">
-                        <label for="lastNameinput" class="form-label">Update Details</label>
-                        <textarea class="form-control" placeholder="Enter Update Details " id="exampleFormControlTextarea5" rows="3"></textarea>
+                        <label for="firstNameinput" class="form-label">Project Coordinates</label>
+                        <input type="text" class="form-control" placeholder="Enter Coordinates" id="firstNameinput">
                     </div>
                 </div><!--end col-->
-                
+                <!--Editor-->
                 <div class="col-12">
                     <div class="mb-3">
-                        <label class="form-label" for="customFile">Add Update Image</label>
+                        <label for="citynameInput" class="form-label">Project Description</label>
+                        <label id="editor" for="editor"></label>
+                    </div>
+                </div><!--end col-->
+                 <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label" for="customFile">Description Image</label>
+                        <input type="file" class="form-control" id="customFile" />
+                    </div>
+                </div><!--end col-->
+                <!--Editor-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="citynameInput" class="form-label">Community Challenges</label>
+                        <label id="editor2" for="editor"></label>
+                    </div>
+                </div><!--end col-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label" for="customFile">Challenge Image</label>
                         <input type="file" class="form-control" id="customFile" /></div>
-                </div>
-               
-               
+                </div><!--end col-->
+                <!--Editor-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="citynameInput" class="form-label">Project Impact</label>
+                        <label id="editor3" for="editor"></label>
+                    </div>
+                </div><!--end col-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label" for="customFile">Impact Image</label>
+                        <input type="file" class="form-control" id="customFile" /></div>
+                </div><!--end col-->
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label class="form-label">
+                            <input class="form-check-input me-1" type="checkbox" value="">
+                            Set As Home Page Featured Project
+                        </label>
+                    </div>
+                </div><!--end col-->
+                               
             </div>
             <div class="col-lg-12">
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </div><!--end col-->
         </form>
     </div>
 </div>
 </div>
+
+@section Scripts {
+    <!--Ck Editor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+     <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor2' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+     <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor3' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+}
+
 
