@@ -10,7 +10,7 @@ namespace WebsiteCMSLibrary.Model.HomePage
     {
         public int Id { get; set; }
         public string UpdateType { get; set; }
-        public string UpdateCtageory { get; set; }
+        public string UpdateCategory { get; set; }
         public string ProjectProgramType { get; set; }
         public string Title { get; set; }
         public string Location { get; set; }
@@ -22,5 +22,7 @@ namespace WebsiteCMSLibrary.Model.HomePage
         public string Impact { get; set; }
         public string ImpactImage { get; set; }
         public Boolean HomeFeatured { get; set; }
+        public string AddedBy { get; set; }
+        public DateTime DateAdded { get; set; }
     }
 }

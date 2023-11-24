@@ -20,7 +20,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Updates
 
         public void AddUpdate(MyUpdateModel update)
         {
-            db.SaveData("Insert Into Updates (UpdateType, UpdateCategory, ProjectProgramType, Title, Location, GISCordinates, Description, DescriptionImage, Challenges, ChallengeImage, Impact, ImpactImage, HomeFeatured, AddedBy, DateAdded) values(@UpdateType, @UpdateCategory, @ProjectProgramType, @Title, @Location, @GISCordinates, @Description, @DescriptionImage, @Challenges, @ChallengeImage, @Impact, @ImpactImage, @HomeFeatured, @AddedBy, @DateAdded)", new { update }, connectionStringName, false);
+            db.SaveData("Insert Into Updates (UpdateType, UpdateCategory, ProjectProgramType, Title, Location, GISCordinates, Description, DescriptionImage, Challenges, ChallengeImage, Impact, ImpactImage, HomeFeatured, AddedBy, DateAdded) values(@UpdateType, @UpdateCategory, @ProjectProgramType, @Title, @Location, @GISCordinates, @Description, @DescriptionImage, @Challenges, @ChallengeImage, @Impact, @ImpactImage, @HomeFeatured, @AddedBy, @DateAdded)", new { update.UpdateType, update.UpdateCategory, update.ProjectProgramType, update.Title, update.Location, update.GISCordinates, update.Description, update.DescriptionImage, update.Challenges, update.ChallengeImage, update.Impact, update.ImpactImage, update.HomeFeatured, update.AddedBy, update.DateAdded }, connectionStringName, false);
         }
         public List<MyUpdateModel> AllUpdates()
         {
@@ -46,7 +46,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Updates
         }
         public void EditUpdate(MyUpdateModel update)
         {
-            db.SaveData("Update Updates Set UpdateType = @UpdateType, UpdateCategory = @UpdateCategory, ProjectProgramType = @ProjectProgramType, Title = @Title, Location = @Location, GISCordinates = @GISCordinates, Description = @Description, DescriptionImage = @DescriptionImage, Challenges = @Challenges, ChallengeImage = @ChallengeImage, Impact = @Impact, ImpactImage = @ImpactImage, HomeFeatured = @HomeFeatured Where Id = @Id", new { UpdateType = update.UpdateType, UpdateCategory = update.UpdateCtageory, ProjectProgramType = update.ProjectProgramType, Title = update.Title, Location = update.Location, GISCordinates = update.Location, Description = update.Description, DescriptionImage = update.DescriptionImage, Challenges = update.Challenges, ChallengeImage = update.ChallengeImage, Impact = update.Impact, ImpactImage = update.Impact, HomeFeatured = update.HomeFeatured }, connectionStringName, false);
+            db.SaveData("Update Updates Set UpdateType = @UpdateType, UpdateCategory = @UpdateCategory, ProjectProgramType = @ProjectProgramType, Title = @Title, Location = @Location, GISCordinates = @GISCordinates, Description = @Description, DescriptionImage = @DescriptionImage, Challenges = @Challenges, ChallengeImage = @ChallengeImage, Impact = @Impact, ImpactImage = @ImpactImage, HomeFeatured = @HomeFeatured Where Id = @Id", new { UpdateType = update.UpdateType, UpdateCategory = update.UpdateCategory, ProjectProgramType = update.ProjectProgramType, Title = update.Title, Location = update.Location, GISCordinates = update.Location, Description = update.Description, DescriptionImage = update.DescriptionImage, Challenges = update.Challenges, ChallengeImage = update.ChallengeImage, Impact = update.Impact, ImpactImage = update.Impact, HomeFeatured = update.HomeFeatured }, connectionStringName, false);
         }
     }
 }
