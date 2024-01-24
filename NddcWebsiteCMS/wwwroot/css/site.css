@@ -36,3 +36,7 @@ body {
 .navbar-menu .navbar-nav .nav-link {
     color: white;
 }
+
+.nav-custom-primary-dark {
+    background-color: #071D53;
+}

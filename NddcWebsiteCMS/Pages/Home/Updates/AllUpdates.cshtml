@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-12">
-        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
             <h4 class="mb-sm-0">All Updates</h4>
 
             <div class="page-title-right">
@@ -20,14 +20,14 @@
 </div>
 
 <div class="row">
-    <div class="card-header justify-content-end align-items-center d-flex">
-        <a href="/Home/Updates/AddUpdates" type="button" class="btn btn-soft-primary btn-sm">
+    <div class="justify-content-end align-items-center d-flex mb-3 p-0">
+        <a href="/Home/Updates/AddUpdates" type="button" class="btn btn-primary">
             Add Updates
         </a>
     </div>
-    <div class="card">
+    <div class="card p-0">
             <div class=" text-center ">
-                <ul class="nav nav-tabs nav-pills nav-justified card-header-tabs mb-3 animation-nav gap-3 p-3" role="tablist">
+            <ul class="card-header nav nav-pills rounded nav-custom nav-custom-secondary mb-3  px-4 py-2" " role="tablist">
                     <li class="nav-item" role="presentation">
                         <a class="nav-link active" data-bs-toggle="tab" href="#base-justified-product" role="tab" aria-selected="true">
                             All Updates
@@ -51,31 +51,57 @@
                 </ul>
                     
             </div><!-- end card-header -->
-        <div class="card-body">
+
+        
+        @* <div class="d-flex align-middle">
+            <div class="flex-shrink-0">
+                <img src="@Model._container@item.DescriptionImage" style="height:100px;" alt="">
+            </div>
+            <div class="flex-grow-1 ms-3 d-flex justify-content-between">
+                <div>
+                    <h6 class="mb-1 lh-base"><a href="#" class="text-reset">@item.Title </a></h6>
+                    <h7 class="mb-1 lh-base">
+                @item.Description
+                    </h7>
+                    <p class="text-muted fs-12 mb-0">@item.DateAdded <i class="mdi mdi-circle-medium align-middle mx-1"></i>09:22 AM</p>
+
+                </div>
+                <div class="flex-shrink-0 avatar-xs align-self-center mx-4">
+                    <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
+                        <i class="ri-sip-fill"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div> *@
+
+        <div class="card-body p-4">
             @foreach (var item in Model.Updates)
             {
-                <div class="d-flex align-middle">
-                    <div class="flex-shrink-0">
-                        <img src="@Model._container@item.DescriptionImage" style="height:100px;" alt="">
-                    </div>
-                    <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                        <div>
-                            <h6 class="mb-1 lh-base"><a href="#" class="text-reset">@item.Title </a></h6>
-                            <h7 class="mb-1 lh-base">
-                                @item.Description
-                            </h7>
-                            <p class="text-muted fs-12 mb-0">@item.DateAdded <i class="mdi mdi-circle-medium align-middle mx-1"></i>09:22 AM</p>
+            <div class="card border-0">
+                <div class="card-body bg-light rounded-4 p-3">
+                    <div class="d-flex position-relative align-items-center justify-content-between">
+                        <div class="d-flex position-relative">
+                            <div class="pe-4">
+                                <img src="@Model._container@item.DescriptionImage" style="height:100px;" alt="">
+                            </div>
+                            <div>
+                                <h6 class="mb-1 lh-base"><a href="#" class="text-reset">@item.Title </a></h6>
+                                <h7 class="mb-1 lh-base">
+                                    @item.Description
+                                </h7>
+                                <p class="text-muted fs-12 mb-0">@item.DateAdded <i class="mdi mdi-circle-medium align-middle mx-1"></i>09:22 AM</p>
 
+                            </div>
                         </div>
-                        <div class="flex-shrink-0 avatar-xs align-self-center mx-4">
-                            <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                <i class="ri-sip-fill"></i>
+                        <div>
+                                <a class="fs-20 text-primary btn text-center " href="/Home/Updates/EditUpdates">
+                                <i class="bx bx-edit"></i>
                             </a>
                         </div>
                     </div>
-
                 </div>
-
+            </div>
                 <!-- end -->
             }
             

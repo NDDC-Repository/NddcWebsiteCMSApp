@@ -28,7 +28,7 @@
                 </a>
             </div>
         </div><!-- end card-header -->
-    <div class="card">
+        <div class="card border rounded-4">
             @* <div class="d-flex align-middle">
                 <div class="flex-shrink-0">
                     <img src="@Model._containerUrl@item.ImageUrl" class="rounded img-fluid" style="height:100px; width:150px" alt="">
@@ -49,13 +49,13 @@
                         </a>
                     </div>
                 </div>
-            </div> *@
+            </div> *@ 
 
-        <div class="card-body">
+        <div class="card-body p-5">
             @foreach (var item in Model.NewsList)
                 {
                     <div class="card border-0">
-                        <div class="card-body bg-light ">
+                        <div class="card-body bg-light rounded-4 p-3">
                             <div class="d-flex position-relative align-items-center justify-content-between">
                                 <div class="d-flex position-relative">
                                     <div class="pe-4">
