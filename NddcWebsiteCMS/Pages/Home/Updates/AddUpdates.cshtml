@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col-12">
-        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
             <h4 class="mb-sm-0">Add Updates</h4>
 
             <div class="page-title-right">
@@ -19,14 +19,14 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="card col-9">
+<div class="row justify-content-center">
+    <div class="card col-9 border rounded-4 justify-content-center">
     <div class="card-body">
             <form method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">Type of Update  </label>
-                    <select class="form-select mb-3" aria-label="Updates Type">
+                    <select class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
                         <option selected="None">Select</option>
                         <option value="Project">Project </option>
                         <option value="Program">Program</option>
@@ -34,7 +34,7 @@
                 </div><!--end col-->
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">Update Category </label>
-                    <select class="form-select mb-3" asp-for="@Model.Update.UpdateCategory" aria-label="Category">
+                    <select class="form-select bg-light border-0 mb-3" asp-for="@Model.Update.UpdateCategory" aria-label="Category">
                         <option selected="None">Select</option>
                         <option value="Physical">Physical Infrastructure </option>
                         <option value="Social">Social Infrastructure</option>
@@ -43,7 +43,7 @@
                 </div><!--end col-->
                 <div class="col-12">
                     <label for="compnayNameinput" class="form-label">Program/Project Type  </label>
-                    <select class="form-select mb-3" asp-for="@Model.Update.ProjectProgramType" aria-label="Updates Type">
+                    <select class="form-select bg-light border-0 mb-3" asp-for="@Model.Update.ProjectProgramType" aria-label="Updates Type">
                         <option selected="">Select</option>
                         <option value="Roads and Bridges">Roads and Bridges </option>
                         <option value="Solar Water">Solar Water</option>
@@ -52,19 +52,19 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Project Title</label>
-                        <input type="text" asp-for="@Model.Update.Title" class="form-control" placeholder="Enter Project Title(75 char.)" id="firstNameinput">
+                        <input type="text" asp-for="@Model.Update.Title" class="form-control bg-light border-0" placeholder="Enter Project Title(75 char.)" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Project Location</label>
-                        <input type="text" asp-for="@Model.Update.Location" class="form-control" placeholder="Enter Project Location(75 char.)" id="firstNameinput">
+                        <input type="text" asp-for="@Model.Update.Location" class="form-control bg-light border-0" placeholder="Enter Project Location(75 char.)" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Project Coordinates</label>
-                        <input type="text" asp-for="@Model.Update.GISCordinates" class="form-control" placeholder="Enter Coordinates" id="firstNameinput">
+                        <input type="text" asp-for="@Model.Update.GISCordinates" class="form-control bg-light border-0" placeholder="Enter Coordinates" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <!--Editor-->
@@ -77,7 +77,7 @@
                  <div class="col-12">
                     <div class="mb-3">
                         <label class="form-label" for="customFile">Description Image</label>
-                        <input type="file" asp-for="@Model.DescUpload" class="form-control" id="customFile" />
+                        <input type="file" asp-for="@Model.DescUpload" class="form-control bg-light border-0" id="customFile" />
                     </div>
                 </div><!--end col-->
                 <!--Editor-->
@@ -90,7 +90,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label class="form-label" for="customFile">Challenge Image</label>
-                            <input type="file" asp-for="@Model.CommChallengeUpload" class="form-control" id="customFile" />
+                            <input type="file" asp-for="@Model.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                 </div><!--end col-->
                 <!--Editor-->
@@ -103,7 +103,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label class="form-label" for="customFile">Impact Image</label>
-                        <input type="file" asp-for="@Model.ImpactUpload" class="form-control" id="customFile" /></div>
+                        <input type="file" asp-for="@Model.ImpactUpload" class="form-control bg-light border-0" id="customFile" /></div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
