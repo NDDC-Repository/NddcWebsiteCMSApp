@@ -19,6 +19,9 @@
     </div>
 </div>
 
+<form method="post">
+
+
 <div class="row">
     <div class="">
     <div class="card">
@@ -35,16 +38,17 @@
             <div class="row d-flex">
                 @foreach (var item in Model.Photos)
                     {
+                        <label hidden>@item.Id</label>
                         <div class="col-sm-6 col-xl-3">
                             <!-- Simple card -->
-                            <div class="gallery-box card">
-                                <div class="gallery-container">
-                                    <a class="image-popup" href="@Model._bucketName@item.ImageUrl" title="">
-                                        <img class="gallery-img img-fluid mx-auto" style="height:400px; width:350px;" src="@Model._bucketName@item.ImageUrl" alt="">
-                                        <div class="gallery-overlay">
-                                            <h5 class="overlay-caption">@item.Title</h5>
-                                        </div>
-                                    </a>
+                            <div class="card">
+                                <img class="card-img-top img-fluid" src="@Model._bucketName@item.ImageUrl" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-2">@item.Title</h4>
+                                    <p class="card-text">@item.Location</p>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-secondary">Edit</button>
+                                    </div>
                                 </div>
                             </div><!-- end card -->
                         </div>
@@ -63,6 +67,7 @@
     </div><!-- end card -->
 </div>
 
+</form>
 @*<div class='row'>
     <div class="card-body">
         <div class="row">

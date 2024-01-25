@@ -33,7 +33,8 @@ namespace NddcWebsiteCMS.Pages.Home.PhotoSpeak
         public async Task<IActionResult> OnPost()
         {
             string fileName = "Photos/" + helperDb.RandomNumber(0, 1000) +  Upload.FileName;
-            MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
+            //MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
+            MyBlobResponseModel? response = await storage.UploadAndResizeImageAsync(Upload, 555, 525, fileName);
             Photo.ImageUrl = response.Blob.Uri;
             Photo.DateAdded = DateTime.Now;
             Photo.AddedBy = "Admin";

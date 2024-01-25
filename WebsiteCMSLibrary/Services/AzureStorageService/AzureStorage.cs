@@ -113,6 +113,11 @@ namespace WebsiteCMSLibrary.Services.AzureStorageService
             return files;
         }
 
+        public Task<MyBlobResponseModel> UploadAndResizeImageAsync(IFormFile imageFile, int newWidth, int newHeight, string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<MyBlobResponseModel> UploadAsync(IFormFile blob, string myFileName)
         {
             // Create new upload response object that we can return to the requesting method

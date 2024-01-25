@@ -23,5 +23,9 @@ namespace NddcWebsiteCMS.Pages.Home.PhotoSpeak
             
             Photos = photoDb.AllPhotos();
         }
+        public void OnPost()
+        {
+            
+        }
     }
 }
