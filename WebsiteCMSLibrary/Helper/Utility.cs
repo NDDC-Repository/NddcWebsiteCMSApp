@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,29 @@ namespace WebsiteCMSLibrary.Helper
             }
 
             return lowerCase ? builder.ToString().ToLower() : builder.ToString();
+        }
+        public bool IsImageSizeValid(IFormFile imageFile, int minWidth, int minHeight)
+        {
+            try
+            {
+                using (Stream stream = imageFile.OpenReadStream())
+                using (var image = System.Drawing.Image.FromStream(stream))
+                {
+                    if (image.Width >= minWidth && image.Height >= minHeight)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                // Handle exceptions (e.g., invalid image format) here
+                return false;
+            }
         }
     }
 }
