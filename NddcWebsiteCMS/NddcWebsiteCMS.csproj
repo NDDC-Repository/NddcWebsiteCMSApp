@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Home\Adverts\TendersAndAdverts.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Pages\Gallery\SightsAndIcons\" />
     <Folder Include="Pages\Gallery\Videos\" />
     <Folder Include="Pages\Gallery\PhotoAlbum\" />
@@ -17,6 +21,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebsiteCMSLibrary\WebsiteCMSLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Home\Adverts\TendersAndAdverts.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Home\Adverts\TendersAndAdverts.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Home\Adverts\TendersAndAdverts.cshtml" />
   </ItemGroup>
 
 </Project>

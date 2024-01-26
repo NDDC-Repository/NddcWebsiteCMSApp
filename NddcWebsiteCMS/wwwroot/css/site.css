@@ -17,26 +17,8 @@ body {
   margin-bottom: 60px;
 }
 
-.page-content {
-    background-color: #F3F6F9;
-}
-
-.navbar-header {
-    background-color: #071D53;
-}
-
-.sidebar-background {
-    background-color: #071D53;
-}
-
-.navbar-menu .navbar-nav .nav-link svg {
-    color: white;
-}
-
-.navbar-menu .navbar-nav .nav-link {
-    color: white;
-}
-
-.nav-custom-primary-dark {
-    background-color: #071D53;
+.chsevenfive {
+    max-width: 75ch;
+    overflow: hidden;
+    white-space: nowrap;
 }
