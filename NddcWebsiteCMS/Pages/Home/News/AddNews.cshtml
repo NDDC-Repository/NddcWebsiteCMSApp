@@ -1,7 +1,14 @@
 ﻿@page
 @model NddcWebsiteCMS.Pages.Home.News.AddNewsModel
 @{
+    ViewData["News"] = "active";
 }
+
+<div id="loading" style="display: none;">
+    <!-- Loading message or animation -->
+    <h2>Loading...</h2>
+</div>
+
 
 <div class="row">
     <div class="col-12">
@@ -26,7 +33,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">News Title</label>
-                            <textarea type="text" class="form-control bg-light border-0 " placeholder="Enter News Subject(75 char.)" id="firstNameinput" name="News.Subject" value="" maxlength="75"></textarea>
+                            <input type="text" class="form-control bg-light border-0 " placeholder="Enter News Subject(75 char.)" id="firstNameinput" name="News.Subject" value="" maxlength="75">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
@@ -72,7 +79,14 @@
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
-                            <label class="form-label" for="customFile">Add Image (1894 x 731 px)</label>
+                            @if(Model.ImageIsSmall == true)
+                            {
+                                <!-- danger Alert -->
+                                <div class="alert alert-danger" role="alert">
+                                    <strong> Image Cannot Be Uploaded! </strong> The file size is less than 1894x731 pixels.
+                                </div>
+                            }
+                            <label class="form-label" for="customFile">Add Image <b>(Image Size Must be equal to or larger than 1894 x 731 px)</b></label>
                             <input type="file" class="form-control bg-light border-0" id="customFile" data-val="true" data-val-required="The Upload field is required." name="Upload">
                         </div>
                     </div>
@@ -90,7 +104,7 @@
                         </div>
                     </div><!--end col-->
                 </div><!--end row-->
-                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DIGSGoNvIJIowXdNO-vFhC0_lLokQqBzM4jvMe5JIeVaxCG3IyKU0Xr6yezI8xyaE5o9rzLKpb61dFB-lUrUUK-xPSdD374Vzs6V9EilhXR8Fae1gvVv2utmoBVpO2LAxm7RxcxiJydpPEwMF4QPmE">
+                @* <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DIGSGoNvIJIowXdNO-vFhC0_lLokQqBzM4jvMe5JIeVaxCG3IyKU0Xr6yezI8xyaE5o9rzLKpb61dFB-lUrUUK-xPSdD374Vzs6V9EilhXR8Fae1gvVv2utmoBVpO2LAxm7RxcxiJydpPEwMF4QPmE"> *@
             </form>
         </div>
     </div>
@@ -108,4 +122,6 @@
                 console.error(error);
             });
     </script>
+
+    
 }

@@ -20,18 +20,18 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
     <div class="card-body">
-        <form action="javascript:void(0);">
+        <form method="post">
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Video Title</label>
-                            <textarea type="text" class="form-control" placeholder="Enter Title (75 char.)" id="firstNameinput" maxlength="75"></textarea>
+                            <input type="text" asp-for="@Model.Video.VideoTitle" class="form-control" placeholder="Enter Title (75 char.)" id="firstNameinput" maxlength="75"></input>
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Video Description</label>
-                            <textarea type="text" class="form-control" placeholder="Enter Description (280 char)" id="firstNameinput" maxlength="280"></textarea>
+                            <textarea type="text" asp-for="@Model.Video.VideoDesc" class="form-control" placeholder="Enter Description (280 char)" id="firstNameinput" maxlength="280"></textarea>
                     </div>
                 </div><!--end col-->
 
@@ -42,7 +42,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon3">https://</span>
                                 </div>
-                                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                <input type="text" asp-for="@Model.Video.YoutubeUrl" class="form-control" id="basic-url" aria-describedby="basic-addon3">
                             </div>
                     </div>
                 </div>

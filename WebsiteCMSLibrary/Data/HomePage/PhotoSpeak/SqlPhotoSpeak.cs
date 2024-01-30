@@ -24,16 +24,16 @@ namespace WebsiteCMSLibrary.Data.HomePage.PhotoSpeak
         }
         public List<MyPhotoSpeakModel> AllPhotos()
         {
-            return db.LoadData<MyPhotoSpeakModel, dynamic>("Select Title, Location, ImageUrl, DateAdded From PhotoSpeak Order By Id DESC", new { }, connectionStringName, false).ToList();
+            return db.LoadData<MyPhotoSpeakModel, dynamic>("Select Id, Title, Location, ImageUrl, DateAdded From PhotoSpeak Order By Id DESC", new { }, connectionStringName, false).ToList();
         }
 
         public void DeleteUpdate(int id)
         {
             db.SaveData("Delete PhotoSpeak Where Id = @Id", new { Id = id }, connectionStringName, false);
         }
-        public void EditUpdate(MyPhotoSpeakModel photoSpeak)
+        public void EditPhotoSpeak(MyPhotoSpeakModel photoSpeak)
         {
-            db.SaveData("Update Updates Set UpdateType = @UpdateType, UpdateCategory = @UpdateCategory, ProjectProgramType = @ProjectProgramType, Title = @Title, Location = @Location, GISCordinates = @GISCordinates, Description = @Description, DescriptionImage = @DescriptionImage, Challenges = @Challenges, ChallengeImage = @ChallengeImage, Impact = @Impact, ImpactImage = @ImpactImage, HomeFeatured = @HomeFeatured Where Id = @Id", new { photoSpeak }, connectionStringName, false);
+            db.SaveData("Update PhotoSpaek Set Title = @Title, Location = @Location, ImageUrl = @ImageUrl Where Id = @Id", new { photoSpeak.Title, photoSpeak.Location, photoSpeak.ImageUrl, photoSpeak.Id }, connectionStringName, false);
         }
     }
 }

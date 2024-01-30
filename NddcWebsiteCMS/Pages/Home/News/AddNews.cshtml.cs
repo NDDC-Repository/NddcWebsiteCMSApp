@@ -19,6 +19,9 @@ namespace NddcWebsiteCMS.Pages.Home.News
         [BindProperty]
         public IFormFile Upload { get; set; }
 
+        [BindProperty( SupportsGet = true)]
+        public bool ImageIsSmall { get; set; }
+
         public AddNewsModel(INewsData newsDb, IAzureStorage storage, IHelperData helpDb)
         {
             this.newsDb = newsDb;
@@ -33,16 +36,26 @@ namespace NddcWebsiteCMS.Pages.Home.News
 
         public async Task<IActionResult> OnPost()
         {
-            string fileName = "News/" + helpDb.RandomNumber(0, 1000) + Upload.FileName;
-            MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
+            if (helpDb.IsImageSizeValid(Upload, 1894, 731))
+            {
+                string fileName = "News/" + helpDb.RandomNumber(0, 1000) + Upload.FileName;
+                MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
 
+                News.DateCreated = DateTime.Now;
+                News.CreatedBy = "Admin";
+                News.ImageUrl = response.Blob.Uri;
 
-            News.DateCreated = DateTime.Now;
-            News.CreatedBy = "Admin";
-            News.ImageUrl = response.Blob.Uri;
+                newsDb.AddNews(News);
 
-            newsDb.AddNews(News);
-            return RedirectToPage("AllNews");
+                return RedirectToPage("AllNews");
+            }
+
+            ImageIsSmall = true;
+
+            return Page();
+           
         }
+
+       
     }
 }

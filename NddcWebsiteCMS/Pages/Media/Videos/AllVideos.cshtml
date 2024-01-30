@@ -33,94 +33,23 @@
 
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
+                    @foreach (var item in Model.Videos)
+                    {
+                        <div class="col-sm-6 col-xl-3">
+                            <!-- Simple card -->
+                            <div class="card">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.youtube.com/embed/@item.YoutubeUrl" title="@item.VideoTitle" allowfullscreen></iframe>
+                                    @* <video src="@item.YoutubeUrl" controls title="@item.VideoTitle" type="video/mp4"></video> *@
                                 </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
+                                <div class="card-body">
+                                    <h4 class="card-title mb-2">@item.VideoTitle</h4>
                                 </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.youtube.com/embed/6plvkizQOv4" title="NDDC video" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">NDDC Inaugurates Aquaculture Training Centre in Abia, Advances SDGs on Poverty Eradication.</h4>
-                                </div>
-                        </div><!-- end card -->
-                    </div>
+                            </div><!-- end card -->
+                        </div>
+                    }    
+
+                   
                     </div>
                 </div>
             </div>

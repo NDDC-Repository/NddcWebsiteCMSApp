@@ -1,6 +1,9 @@
 using WebsiteCMSLibrary.Data.HomePage;
 using WebsiteCMSLibrary.Data.HomePage.PhotoSpeak;
+using WebsiteCMSLibrary.Data.HomePage.Publications;
+using WebsiteCMSLibrary.Data.HomePage.Tenders;
 using WebsiteCMSLibrary.Data.HomePage.Updates;
+using WebsiteCMSLibrary.Data.HomePage.Videos;
 using WebsiteCMSLibrary.Databases;
 using WebsiteCMSLibrary.Helper;
 using WebsiteCMSLibrary.Services.AWSStorageService;
@@ -17,6 +20,9 @@ builder.Services.AddTransient<IAzureStorage, AWSStorage>();
 builder.Services.AddTransient<IUpdatesData, SqlUpdates>();
 builder.Services.AddTransient<IPhotoSpeakData, SqlPhotoSpeak>();
 builder.Services.AddTransient<IHelperData, Utility>();
+builder.Services.AddTransient<IVideoData, SqlVideos>();
+builder.Services.AddTransient<IPublicationsData, SqlPublications>();
+builder.Services.AddTransient<ITendersData, SqlTenders>();
 
 var app = builder.Build();
 
