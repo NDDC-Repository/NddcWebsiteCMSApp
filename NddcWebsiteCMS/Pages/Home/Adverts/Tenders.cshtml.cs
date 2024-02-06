@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace NddcWebsiteCMS.Pages.Home.Adverts
 {
-    public class TendersAndAdvertsModel : PageModel
+    public class TendersModel : PageModel
     {
         public void OnGet()
         {
