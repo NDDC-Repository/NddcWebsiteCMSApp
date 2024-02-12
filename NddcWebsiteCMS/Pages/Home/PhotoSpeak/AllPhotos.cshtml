@@ -46,10 +46,18 @@
                                 <div class="card-body">
                                     <h4 class="card-title mb-2">@item.Title</h4>
                                     <p class="card-text">@item.Location</p>
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-secondary">Edit</button>
-                                            <a asp-page="DeletePhoto" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
-                                    </div>
+                                        <div class="text-end">
+                                            <a asp-page="EditPhotos" asp-route-Id="@item.Id" class="fs-4 p-0 text-primary btn text-center">
+                                                <i class="las la-pen-square"></i>
+                                            </a>
+                                            <a asp-page="DeletePhoto" asp-route-Id="@item.Id" class="fs-4 text-danger btn text-center">
+                                                <i class="las la-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    @* <div class="text-end">
+                                        <button asp-page="EditPhotos" asp-route-Id="@item.Id" class="btn btn-secondary">Edit</button>
+                                        <a asp-page="DeletePhoto" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+                                    </div> *@
                                 </div>
                             </div><!-- end card -->
                         </div>

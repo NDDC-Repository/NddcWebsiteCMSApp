@@ -44,7 +44,16 @@
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title mb-2">@item.VideoTitle</h4>
+                                    <div class="text-end">
+                                        <a asp-page="EditVideos" asp-route-Id="@item.Id" class="fs-4 p-0 text-primary btn text-center">
+                                            <i class="las la-pen-square"></i>
+                                        </a>
+                                        <a asp-page="DeleteVideos" asp-route-Id="@item.Id" class="fs-4 text-danger btn text-center">
+                                            <i class="las la-trash-alt"></i>
+                                        </a>
+                                    </div>
                                 </div>
+                                
                             </div><!-- end card -->
                         </div>
                     }    
@@ -55,7 +64,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 @*<!-- Ratio Video 16:9 -->
