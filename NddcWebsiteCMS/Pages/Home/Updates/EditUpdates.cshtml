@@ -2,3 +2,159 @@
 @model NddcWebsiteCMS.Pages.Home.Updates.EditUpdatesModel
 @{
 }
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
+            <h4 class="mb-sm-0">Add Updates</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="/Home/Updates/AllUpdates">Updates</a></li>
+                    <li class="breadcrumb-item active">Add Updates</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="card col-9 border rounded-4 justify-content-center">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Type of Update  </label>
+                        <select class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
+                            <option selected="None">Select</option>
+                            <option value="Project">Project </option>
+                            <option value="Program">Program</option>
+                        </select>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Update Category </label>
+                        <select class="form-select bg-light border-0 mb-3"  aria-label="Category">
+                            <option selected="None">Select</option>
+                            <option value="Physical">Physical Infrastructure </option>
+                            <option value="Social">Social Infrastructure</option>
+                            <option value="Partnerships">Global Partnerships</option>
+                        </select>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Program/Project Type  </label>
+                        <select class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
+                            <option selected="">Select</option>
+                            <option value="Roads and Bridges">Roads and Bridges </option>
+                            <option value="Solar Water">Solar Water</option>
+                        </select>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="firstNameinput" class="form-label">Project Title</label>
+                            <input type="text"  class="form-control bg-light border-0" placeholder="Enter Project Title(75 char.)" id="firstNameinput" maxlength="75">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="firstNameinput" class="form-label">Project Location</label>
+                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Project Location(75 char.)" id="firstNameinput" maxlength="75">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="firstNameinput" class="form-label">Project Coordinates</label>
+                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Coordinates" id="firstNameinput">
+                        </div>
+                    </div><!--end col-->
+                    <!--Editor-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="citynameInput" class="form-label">Project Description</label>
+                            <label id="editor" for="editor"></label>
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="customFile">Description Image (678 x 453 px)</label>
+                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                        </div>
+                    </div><!--end col-->
+                    <!--Editor-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="citynameInput" class="form-label">Community Challenges</label>
+                            <label id="editor2"></label>
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="customFile">Challenge Image (678 x 453 px)</label>
+                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                        </div>
+                    </div><!--end col-->
+                    <!--Editor-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="citynameInput" class="form-label">Project Impact</label>
+                            <label id="editor3" for="editor"></label>
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="customFile">Impact Image (678 x 453 px)</label>
+                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">
+                                <input class="form-check-input me-1" type="checkbox" value="">
+                                Set As Home Page Featured Project
+                            </label>
+                        </div>
+                    </div><!--end col-->
+
+                </div>
+                <div class="hstack justify-content-between">
+                    <div class="">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div><!--end col-->
+                    <div class="">
+                        <form method="post" action="/Home/News/EditUpdates/42?handler=delete">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DIGSGoNvIJIowXdNO-vFhB0u8m9SxajkhBgf5NnSMmJ1zJjaEEeP2xNy_r85cipSvG0vebLhBNL-O-lajz6YRuJCmylS4iEvDG24Tkgg6VGM_QyCTHGG2izTkHar5KZrw6gBS1AXqZsAn4j22OfrhQ">
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!--Ck Editor-->
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor2'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor3'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+

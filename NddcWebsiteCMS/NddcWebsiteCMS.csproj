@@ -8,9 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Gallery\SightsAndIcons\" />
-    <Folder Include="Pages\Gallery\Videos\" />
-    <Folder Include="Pages\Gallery\PhotoAlbum\" />
     <Folder Include="wwwroot\images\team\" />
     <Folder Include="wwwroot\images\news\" />
   </ItemGroup>
