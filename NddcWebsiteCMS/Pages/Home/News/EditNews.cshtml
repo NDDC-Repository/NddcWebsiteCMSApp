@@ -96,14 +96,14 @@
                             <label id="editor" asp-for="@Model.News.Details"></label>
                         </div>
                     </div><!--end col-->
-                    <div class="hstack justify-content-between">
+
+                     <div class="hstack justify-content-between">
                         <div class="">
                                 <button type="submit" class="btn btn-success">Update</button>
                         </div><!--end col-->
-                        <div class="">
-                            <form method="post" action="/Home/News/EditNews/42?handler=delete">
+                        <div class="text-end">
+                            <form asp-page-handler="delete" method="post">
                                 <button type="submit" class="btn btn-danger">Delete</button>
-                                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DIGSGoNvIJIowXdNO-vFhB0u8m9SxajkhBgf5NnSMmJ1zJjaEEeP2xNy_r85cipSvG0vebLhBNL-O-lajz6YRuJCmylS4iEvDG24Tkgg6VGM_QyCTHGG2izTkHar5KZrw6gBS1AXqZsAn4j22OfrhQ">
                             </form>
                         </div>
                     </div>
