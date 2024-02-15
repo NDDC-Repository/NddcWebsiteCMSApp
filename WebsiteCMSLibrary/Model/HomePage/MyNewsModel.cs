@@ -28,5 +28,6 @@ namespace WebsiteCMSLibrary.Model.HomePage
         public int CMID { get; set; }
         public DateTime DateCreated { get; set; }
         public string CreatedBy { get; set; }
+        public string DisplayFormat { get; set; }
     }
 }

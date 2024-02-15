@@ -20,7 +20,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
 
         public void AddNews(MyNewsModel news)
         {
-            db.SaveData("Insert Into News (Subject, Summary, Details, NewsID, ImageUrl, PublishDate, ExpiryDate, TimeStamp, Enabled, Type, SetAsSlide, Archive, NDID, CMID, Datecreated, CreatedBy) values(@Subject, @Summary, @Details, @NewsID, @ImageUrl, @PublishDate, @ExpiryDate, @TimeStamp, @Enabled, @Type, @SetAsSlide, @Archive, @NDID, @CMID, @Datecreated, @CreatedBy)", new { Subject = news.Subject, Summary = news.Summary, Details = news.Details, NewsID = news.NewsId, ImageUrl = news.ImageUrl, PublishDate = news.PublishDate, ExpiryDate = news.ExpiryDate, TimeStamp = news.TimeStamp, Enabled = news.Enabled, Type = news.Type, SetAsSlide = news.SetAsSlide, Archive = news.Archive, NDID = news.NDID, CMID = news.CMID, DateCreated = news.DateCreated, CreatedBy = news.CreatedBy }, connectionStringName, false);
+            db.SaveData("Insert Into News (Subject, Summary, Details, NewsID, ImageUrl, PublishDate, ExpiryDate, TimeStamp, Enabled, Type, SetAsSlide, Archive, NDID, CMID, Datecreated, CreatedBy, DisplayFormat) values(@Subject, @Summary, @Details, @NewsID, @ImageUrl, @PublishDate, @ExpiryDate, @TimeStamp, @Enabled, @Type, @SetAsSlide, @Archive, @NDID, @CMID, @Datecreated, @CreatedBy, @DisplayFormat)", new { Subject = news.Subject, Summary = news.Summary, Details = news.Details, NewsID = news.NewsId, ImageUrl = news.ImageUrl, PublishDate = news.PublishDate, ExpiryDate = news.ExpiryDate, TimeStamp = news.TimeStamp, Enabled = news.Enabled, Type = news.Type, SetAsSlide = news.SetAsSlide, Archive = news.Archive, NDID = news.NDID, CMID = news.CMID, DateCreated = news.DateCreated, CreatedBy = news.CreatedBy, DisplayFormat = news.DisplayFormat }, connectionStringName, false);
         }
         public List<MyNewsModel> AllNews()
         {
@@ -32,7 +32,18 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public string GetBreakingNews()
         {
-            return db.LoadData<string, dynamic>("select top 1 Id, Subject from News OrderBy Id DESC", new { }, connectionStringName, false).SingleOrDefault();
+            return db.LoadData<string, dynamic>("select top 1 Id, Subject from News OrderBy Id DESC Where DisplayFormat = Breaking Where ExpiryDate <= GetDate()", new { }, connectionStringName, false).SingleOrDefault();
+        }
+        public string GetLatestNews()
+        {
+            DateTime publishDate = db.LoadData<DateTime, dynamic>("select top 1 PublishDate from News Where DisplayFormat = Breaking OrderBy Id DESC", new { }, connectionStringName, false).SingleOrDefault();
+
+            if (publishDate > publishDate.AddDays(2))
+            {
+                return db.LoadData<string, dynamic>("select top 1 Id, Subject from News OrderBy Id DESC", new { }, connectionStringName, false).SingleOrDefault();
+            }
+
+            return "None";
         }
         public List<MyNewsModel> DisplaySlides()
         {
@@ -40,7 +51,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public MyNewsModel GetNewsDetails(int Id)
         {
-            return db.LoadData<MyNewsModel, dynamic>("select NID, Subject, Summary, ImageUrl, PublishDate from News where NID = @NID", new { NID = Id }, connectionStringName, false).SingleOrDefault();
+            return db.LoadData<MyNewsModel, dynamic>("select NID, Subject, Summary, NDID, ImageUrl, PublishDate, Type, ExpiryDate, SetAsSlide, DisplayFormat from News where NID = @NID", new { NID = Id }, connectionStringName, false).SingleOrDefault();
         }
         public void DeleteNews(int id)
         {
@@ -48,7 +59,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public void UpdateNews(MyNewsModel news)
         {
-            db.SaveData("Update News Set Subject = @Subject, Summary = @Summary, NDID = @NDID, Type = @Type, SetAsSlide = @SetAsSlide, PublishDate = @PublishDate, ExpiryDate = @ExpiryDate, ImageUrl = @ImageUrl, Details = @Details Where NID = @NID", new { NID = news.NID, Subject = news.Subject, Summary = news.Summary, NDID = news.NDID, Type = news.Type, SetAsSlide = news.SetAsSlide, PublishDate = news.PublishDate, ExpiryDate = news.ExpiryDate, ImageUrl = news.ImageUrl, Details = news.Details }, connectionStringName, false);
+            db.SaveData("Update News Set Subject = @Subject, Summary = @Summary, NDID = @NDID, Type = @Type, SetAsSlide = @SetAsSlide, PublishDate = @PublishDate, ExpiryDate = @ExpiryDate, ImageUrl = @ImageUrl, Details = @Details, DisplayFormat = @DisplayFormat Where NID = @NID", new { NID = news.NID, Subject = news.Subject, Summary = news.Summary, NDID = news.NDID, Type = news.Type, SetAsSlide = news.SetAsSlide, PublishDate = news.PublishDate, ExpiryDate = news.ExpiryDate, ImageUrl = news.ImageUrl, Details = news.Details, DisplayFormat = news.DisplayFormat }, connectionStringName, false);
         }
     }
 }

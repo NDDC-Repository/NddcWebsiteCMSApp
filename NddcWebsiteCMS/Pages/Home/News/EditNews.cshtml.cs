@@ -44,7 +44,7 @@ namespace NddcWebsiteCMS.Pages.Home.News
 
             return RedirectToPage("AllNews");
         }
-        public async Task<IActionResult> OnPostDelete(int? nid)
+        public IActionResult OnPostDelete(int? nid)
         {
             //string fileName = "News/skill2.jpg";
 

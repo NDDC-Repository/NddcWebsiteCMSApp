@@ -9,6 +9,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         void DeleteNews(int id);
         List<MyNewsModel> DisplaySlides();
         string GetBreakingNews();
+        string GetLatestNews();
         MyNewsModel GetNewsDetails(int Id);
         List<MyNewsModel> ListHomePageNews();
         void UpdateNews(MyNewsModel news);

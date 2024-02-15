@@ -39,8 +39,8 @@
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">Set As Slider</label>
                         <select class="form-select bg-light border-0 p-2 mb-3" asp-for="@Model.News.SetAsSlide" aria-label="Default select example">
-                            <option selected="0">NO </option>
-                            <option value="1">YES</option>
+                            <option value="False">NO </option>
+                            <option value="True">YES</option>
                         </select>
                         @*<div class="mb-3">
                         <label for="compnayNameinput" class="form-label">Company Name</label>
@@ -51,7 +51,7 @@
                         <label for="compnayNameinput" class="form-label">News Department</label>
                         <select class="form-select bg-light border-0 p-2 mb-3" asp-for="@Model.News.NDID" aria-label="Default select example">
                             <option selected="">Select</option>
-                            <option value="2">Corporate Affairs Department</option>
+                            <option value="1">Corporate Affairs Department</option>
                         </select>
                         @*<div class="mb-3">
                         <label for="phonenumberInput" class="form-label">Phone Number</label>
@@ -70,6 +70,15 @@
                         <label for="emailidInput" class="form-label">Email Address</label>
                         <input type="email" class="form-control bg-light border-0" placeholder="example@gamil.com" id="emailidInput">
                         </div>*@
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Display Format</label>
+                        <select class="form-select bg-light border-0 p-2 mb-3" asp-for="@Model.News.DisplayFormat" aria-label="Default select example">
+                            <option value="None">Select</option>
+                            <option value="Default">Default</option>
+                            <option value="Breaking">Breaking News</option>
+                            <option value="Prominent">Prominent News</option>
+                        </select>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
@@ -101,10 +110,10 @@
                                 <button type="submit" class="btn btn-success">Update</button>
                         </div><!--end col-->
                         <div class="">
-                            <form method="post" action="/Home/News/EditNews/42?handler=delete">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DIGSGoNvIJIowXdNO-vFhB0u8m9SxajkhBgf5NnSMmJ1zJjaEEeP2xNy_r85cipSvG0vebLhBNL-O-lajz6YRuJCmylS4iEvDG24Tkgg6VGM_QyCTHGG2izTkHar5KZrw6gBS1AXqZsAn4j22OfrhQ">
-                            </form>
+                           @*  <form asp-page-handler="Delete" method="post">
+                                <button asp-page-handler="Delete" type="submit" class="btn btn-danger">Delete</button>
+                            </form> *@
+                            <button asp-page-handler="Delete" type="submit" class="btn btn-danger">Delete</button>
                         </div>
                     </div>
                 </div><!--end row-->

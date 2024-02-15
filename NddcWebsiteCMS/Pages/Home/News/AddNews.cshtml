@@ -33,48 +33,57 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">News Title</label>
-                            <input type="text" class="form-control bg-light border-0 " placeholder="Enter News Subject(75 char.)" id="firstNameinput" name="News.Subject" value="" maxlength="75">
+                            <input type="text" class="form-control bg-light border-0 " placeholder="Enter News Subject(75 char.)" id="firstNameinput" asp-for="@Model.News.Subject" maxlength="75">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="lastNameinput" class="form-label">News Summary</label>
-                            <textarea class="form-control bg-light border-0" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3" name="News.Summary" maxlength="280"></textarea>
+                            <textarea class="form-control bg-light border-0" placeholder="Enter News Summary (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.News.Summary" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">Set As Slider</label>
-                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Default select example" data-val="true" data-val-required="The SetAsSlide field is required." id="News_SetAsSlide" name="News.SetAsSlide">
-                            <option selected="0">NO </option>
-                            <option value="1">YES</option>
+                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Default select example" asp-for="@Model.News.SetAsSlide">
+                            <option value="False">NO </option>
+                            <option value="True">YES</option>
                         </select>
                     </div><!--end col-->
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">News Department</label>
-                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Default select example" data-val="true" data-val-required="The NDID field is required." id="News_NDID" name="News.NDID">
-                            <option selected="">Select</option>
-                            <option value="2">Corporate Affairs Department</option>
+                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Default select example" data-val="true" asp-for="@Model.News.NDID">
+                            <option selected="0">Select</option>
+                            <option value="1">Corporate Affairs Department</option>
                         </select>
                     </div><!--end col-->
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">News Type</label>
-                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Default select example" id="News_Type" name="News.Type">
-                            <option selected="">Select</option>
+                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" asp-for="@Model.News.Type">
+                            <option selected="0">Select</option>
                             <option value="1">Press Statement</option>
                             <option value="2">Press Release</option>
                             <option value="3">Program</option>
                         </select>
                     </div><!--end col-->
                     <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Display Format</label>
+                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" asp-for="@Model.News.DisplayFormat">
+                            <option value="None">Select</option>
+                            <option value="Default">Default</option>
+                            <option value="Breaking">Breaking News</option>
+                            <option value="Prominent">Prominent News</option>
+                        </select>
+                    </div><!--end col-->
+                    <div class="col-12">
                         <div class="mb-3">
                             <label for="address1ControlTextarea" class="form-label">Publish Date</label>
-                            <input type="date" class="form-control bg-light border-0" placeholder="Set Publish Date" id="address1ControlTextarea" data-val="true" data-val-required="The PublishDate field is required." name="News.PublishDate" value="2024-01-22">
+                            <input type="date" class="form-control bg-light border-0" asp-for="@Model.News.PublishDate">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Expiry Date</label>
-                            <input type="date" class="form-control bg-light border-0" placeholder="Post Expiry Date" id="citynameInput" data-val="true" data-val-required="The ExpiryDate field is required." name="News.ExpiryDate" value="2024-01-22">
+                            <input type="date" class="form-control bg-light border-0" asp-for="@Model.News.ExpiryDate">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
