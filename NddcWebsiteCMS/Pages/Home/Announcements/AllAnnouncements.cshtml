@@ -31,177 +31,37 @@
 
 
             <div class="card-body p-5">
-                <div class="row">
-                    
+
+               @foreach (var item in Model.Announcements)
+                {
+                    <div class="row">
+
                         <!-- Simple card -->
                         <div class="card bg-light">
                             <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                            <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021 </p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                            
+                                <h4 class="card-title mb-2">@item.Title</h4>
+                                <p class="text-muted fs-12 mb-0">Start Date: @item.StartDate </p><p class="text-muted fs-12 mb-0">End Date: @item.EndDate</p>
+
                                 <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
                                     <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncements">
+                                        <a class="fs-4 ps-0 text-primary btn text-center" asp-page="EditAnnouncements" asp-route-Id="@item.Id">
                                             <i class="las la-pen-square"></i>
                                         </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
+                                        <a class="fs-4 text-danger btn text-center" asp-page="DeleteAnnouncements" asp-route-Id="@item.Id">
                                             <i class="las la-trash-alt"></i>
                                         </a>
                                     </div>
                                     @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021</p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021 </p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021 </p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021 </p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021 </p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
-                    
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021</p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
+                                <i class="bx bx-dots-horizontal-rounded"></i>
+                                </a> *@
                                 </div>
                             </div>
                         </div><!-- end card -->
                     </div>
+
+                }
                     
-                        <!-- Simple card -->
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Announcement Title</h4>
-                                <p class="text-muted fs-12 mb-0">Start Date: Dec 12, 2021</p><p class="text-muted fs-12 mb-0">End Date: Dec 12, 2025</p>
-                                <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
-                                    <div class="d-flex">
-                                        <a class="fs-4 ps-0 text-primary btn text-center" href="/Home/Announcements/EditAnnouncementss">
-                                            <i class="las la-pen-square"></i>
-                                        </a>
-                                        <a class="fs-4 text-danger btn text-center" href="/Home/Announcements/DeleteAnnouncements">
-                                            <i class="las la-trash-alt"></i>
-                                        </a>
-                                    </div>
-                                    @*  <a href="/Home/Publications/EditPublications" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                    <i class="bx bx-dots-horizontal-rounded"></i>
-                                    </a> *@
-                                </div>
-                            </div>
-                        </div><!-- end card -->
+                       
                 </div>
 
             </div>

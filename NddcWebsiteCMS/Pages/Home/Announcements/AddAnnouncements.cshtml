@@ -22,31 +22,31 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
     <div class="card-body">
-        <form action="javascript:void(0);">
+        <form method="post">
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Announcement Title</label>
-                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Full Name (75 char.)" id="firstNameinput" maxlength="75">
+                            <input type="text" asp-for="@Model.Announcement.Title" class="form-control bg-light border-0" placeholder="Enter Full Name (75 char.)" id="firstNameinput" maxlength="75">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="firstNameinput" class="form-label">Start Date</label>
-                        <input type="date" class="form-control bg-light border-0" id="firstNameinput">
+                        <input type="date" asp-for="@Model.Announcement.StartDate" class="form-control bg-light border-0" id="firstNameinput">
                     </div>
                 </div><!--end col-->
                 <div class="col-12">
                     <div class="mb-3">
                             <label for="firstNameinput" class="form-label">End Date</label>
-                            <input type="date" class="form-control bg-light border-0" id="firstNameinput">
+                            <input asp-for="@Model.Announcement.EndDate" type="date" class="form-control bg-light border-0" id="firstNameinput">
                         </div>
                 </div><!--end col-->
                 <!--Editor-->
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="citynameInput" class="form-label">Announcement Details</label>
-                        <label id="editor" bg-light="" border-0"="" for="News_Details" style="display: none;">Details</label>
+                        <label id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;">Details</label>
                     </div>
                 </div><!--end col-->
             </div>

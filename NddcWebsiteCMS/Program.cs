@@ -1,4 +1,5 @@
 using WebsiteCMSLibrary.Data.HomePage;
+using WebsiteCMSLibrary.Data.HomePage.Announcement;
 using WebsiteCMSLibrary.Data.HomePage.PhotoSpeak;
 using WebsiteCMSLibrary.Data.HomePage.Publications;
 using WebsiteCMSLibrary.Data.HomePage.Tenders;
@@ -23,6 +24,7 @@ builder.Services.AddTransient<IHelperData, Utility>();
 builder.Services.AddTransient<IVideoData, SqlVideos>();
 builder.Services.AddTransient<IPublicationsData, SqlPublications>();
 builder.Services.AddTransient<ITendersData, SqlTenders>();
+builder.Services.AddTransient<IAnnouncmentData, SQLAnnouncment>();
 
 var app = builder.Build();
 
