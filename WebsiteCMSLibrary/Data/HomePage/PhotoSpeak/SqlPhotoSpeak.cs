@@ -35,5 +35,9 @@ namespace WebsiteCMSLibrary.Data.HomePage.PhotoSpeak
         {
             db.SaveData("Update PhotoSpaek Set Title = @Title, Location = @Location, ImageUrl = @ImageUrl Where Id = @Id", new { photoSpeak.Title, photoSpeak.Location, photoSpeak.ImageUrl, photoSpeak.Id }, connectionStringName, false);
         }
-    }
+		public MyPhotoSpeakModel GetPhotoSpeakDetails(int Id)
+		{
+			return db.LoadData<MyPhotoSpeakModel, dynamic>("Select Id, Title, Location, ImageUrl From PhotoSpeak Where Id = @Id", new { Id = Id }, connectionStringName, false).FirstOrDefault();
+		}
+	}
 }

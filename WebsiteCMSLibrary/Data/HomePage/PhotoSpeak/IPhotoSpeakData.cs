@@ -8,5 +8,6 @@ namespace WebsiteCMSLibrary.Data.HomePage.PhotoSpeak
         List<MyPhotoSpeakModel> AllPhotos();
         void DeleteUpdate(int id);
         void EditPhotoSpeak(MyPhotoSpeakModel photoSpeak);
-    }
+		MyPhotoSpeakModel GetPhotoSpeakDetails(int Id);
+	}
 }
