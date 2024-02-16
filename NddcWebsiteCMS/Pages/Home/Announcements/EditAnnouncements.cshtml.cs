@@ -8,7 +8,7 @@ namespace NddcWebsiteCMS.Pages.Home.Announcements
     public class EditAnnouncementsModel : PageModel
     {
         private readonly IAnnouncmentData ancDb;
-        [BindProperty]
+        [BindProperty (SupportsGet = true)]
         public MyAnnouncementModel Announcement { get; set; }
 
         public EditAnnouncementsModel(IAnnouncmentData ancDb)
