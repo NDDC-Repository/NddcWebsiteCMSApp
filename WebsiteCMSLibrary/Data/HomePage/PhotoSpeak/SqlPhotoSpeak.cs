@@ -33,7 +33,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.PhotoSpeak
         }
         public void EditPhotoSpeak(MyPhotoSpeakModel photoSpeak)
         {
-            db.SaveData("Update PhotoSpaek Set Title = @Title, Location = @Location, ImageUrl = @ImageUrl Where Id = @Id", new { photoSpeak.Title, photoSpeak.Location, photoSpeak.ImageUrl, photoSpeak.Id }, connectionStringName, false);
+            db.SaveData("Update PhotoSpeak Set Title = @Title, Location = @Location, ImageUrl = @ImageUrl Where Id = @Id", new { photoSpeak.Title, photoSpeak.Location, photoSpeak.ImageUrl, photoSpeak.Id }, connectionStringName, false);
         }
 		public MyPhotoSpeakModel GetPhotoSpeakDetails(int Id)
 		{

@@ -27,19 +27,19 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label  class="form-label">Photo Title</label>
-                            <input type="text" class="form-control bg-light border-0" placeholder="Enter News Subject(75 char.) " maxlength="75" id="firstNameinput">
+                            <input type="text" asp-for="@Model.Photo.Title" class="form-control bg-light border-0" placeholder="Enter News Subject(75 char.) " maxlength="75" id="firstNameinput">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Photo Location</label>
-                            <input type="text" class="form-control bg-light border-0" placeholder="Enter News Subject(75 char.)" maxlength="75" id="firstNameinput">
+                            <input type="text" asp-for="@Model.Photo.Location" class="form-control bg-light border-0" placeholder="Enter News Subject(75 char.)" maxlength="75" id="firstNameinput">
                         </div><!--end col-->
 
                         <div class="col-12">
                             <div class="mb-3">
                                 <label class="form-label" for="customFile">Add Image (555 x 525 px)</label>
-                                <input type="file" class="form-control bg-light border-0" id="customFile" />
+                                <input type="file" asp-for="@Model.Photo.ImageUrl" class="form-control bg-light border-0" id="customFile" />
                             </div>
                         </div>
                     </div>
