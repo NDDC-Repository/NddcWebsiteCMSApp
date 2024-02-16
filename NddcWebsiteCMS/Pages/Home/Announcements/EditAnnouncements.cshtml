@@ -47,9 +47,9 @@
                             <label for="citynameInput" class="form-label">Announcement Details</label>
                             @* <input id="editor" asp-for="@Model.Announcement.Details"> *@
                             <input type="hidden" id="editorContent" asp-for="@Model.Announcement.Details" />
-                            <div id="editor">
+                            <textarea id="editor">
                                 @Model.Announcement.Details
-                            </div>
+                            </textarea>
 
                         </div>
                     </div><!--end col-->

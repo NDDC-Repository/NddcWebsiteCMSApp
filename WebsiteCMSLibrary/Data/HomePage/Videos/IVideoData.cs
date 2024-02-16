@@ -8,5 +8,6 @@ namespace WebsiteCMSLibrary.Data.HomePage.Videos
         List<MyVideoModel> AllVideos();
         void DeleteVideo(int id);
         void EditVideo(MyVideoModel video);
-    }
+		MyVideoModel GetVideoDetails(int Id);
+	}
 }
