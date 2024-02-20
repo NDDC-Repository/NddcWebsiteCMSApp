@@ -1,8 +1,11 @@
 using WebsiteCMSLibrary.Data.HomePage;
 using WebsiteCMSLibrary.Data.HomePage.Announcement;
+using WebsiteCMSLibrary.Data.HomePage.Organization;
 using WebsiteCMSLibrary.Data.HomePage.PhotoSpeak;
 using WebsiteCMSLibrary.Data.HomePage.Publications;
+using WebsiteCMSLibrary.Data.HomePage.SightsAndIcon;
 using WebsiteCMSLibrary.Data.HomePage.Tenders;
+using WebsiteCMSLibrary.Data.HomePage.Testimonials;
 using WebsiteCMSLibrary.Data.HomePage.Updates;
 using WebsiteCMSLibrary.Data.HomePage.Videos;
 using WebsiteCMSLibrary.Databases;
@@ -25,6 +28,10 @@ builder.Services.AddTransient<IVideoData, SqlVideos>();
 builder.Services.AddTransient<IPublicationsData, SqlPublications>();
 builder.Services.AddTransient<ITendersData, SqlTenders>();
 builder.Services.AddTransient<IAnnouncmentData, SQLAnnouncment>();
+builder.Services.AddTransient<IOrganizationData, SQLOrganization>();
+builder.Services.AddTransient<ITestimonialsData, SQLTestimonials>();
+builder.Services.AddTransient<ISightsAndIconsData, SQLSightsAndIcons>();
+
 
 var app = builder.Build();
 

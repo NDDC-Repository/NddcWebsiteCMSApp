@@ -5,9 +5,11 @@ namespace WebsiteCMSLibrary.Data.HomePage
     public interface INewsData
     {
         void AddNews(MyNewsModel news);
-        List<MyNewsModel> AllNews();
+		void AddNewsPhotoGallery(MyNewsPhotoGalleryModel news);
+		List<MyNewsModel> AllNews();
         void DeleteNews(int id);
-        List<MyNewsModel> DisplaySlides();
+		void DeleteNewsPhotoGallery(int id);
+		List<MyNewsModel> DisplaySlides();
         string GetBreakingNews();
         string GetLatestNews();
         MyNewsModel GetNewsDetails(int Id);

@@ -61,5 +61,13 @@ namespace WebsiteCMSLibrary.Data.HomePage
         {
             db.SaveData("Update News Set Subject = @Subject, Summary = @Summary, NDID = @NDID, Type = @Type, SetAsSlide = @SetAsSlide, PublishDate = @PublishDate, ExpiryDate = @ExpiryDate, ImageUrl = @ImageUrl, Details = @Details, DisplayFormat = @DisplayFormat Where NID = @NID", new { NID = news.NID, Subject = news.Subject, Summary = news.Summary, NDID = news.NDID, Type = news.Type, SetAsSlide = news.SetAsSlide, PublishDate = news.PublishDate, ExpiryDate = news.ExpiryDate, ImageUrl = news.ImageUrl, Details = news.Details, DisplayFormat = news.DisplayFormat }, connectionStringName, false);
         }
-    }
+		public void AddNewsPhotoGallery(MyNewsPhotoGalleryModel news)
+		{
+			db.SaveData("Insert Into NewsPhotoGallery (NewsId, ImageUrl, AddedBy, DateAdded) values(@NewsId, @ImageUrl, @AddedBy, @DateAdded)", new { NewsId = news.NewsId, ImageUrl = news.ImageUrl, AddedBy = news.AddedBy, DateAdded = news.DateAdded }, connectionStringName, false);
+		}
+		public void DeleteNewsPhotoGallery(int id)
+		{
+			db.SaveData("Delete NewsPhotoGallery Where Id = @Id", new { Id = id }, connectionStringName, false);
+		}
+	}
 }
