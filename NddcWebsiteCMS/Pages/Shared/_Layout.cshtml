@@ -678,7 +678,7 @@
                         <div class="dropdown ms-sm-3 header-item topbar-user" style="background-color: #f3f6f9;">
                             <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
-                                    <img class="rounded-circle header-profile-user" src="/images/users/avatar-3.jpg" alt="Header Avatar">
+                                    @* <img class="rounded-circle header-profile-user" src="/images/users/avatar-3.jpg" alt="Header Avatar"> *@
                                     <span class="text-start ms-xl-2">
                                         <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Welcome Back </span>
                                         <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">@User.Identity?.Name!</span>
@@ -687,14 +687,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
-                                <h6 class="dropdown-header">Welcome Anna!</h6>
-                                <a class="dropdown-item" href="pages-profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
-                                <a class="dropdown-item" href="pages-profile-settings.html"><span class="badge bg-soft-success text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
-                                <a class="dropdown-item" href="pages-faqs.html"><i class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Help</span></a>
-                                <div class="dropdown-divider"></div>
-
-                                <a class="dropdown-item" href="auth-lockscreen-basic.html"><i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span></a>
-                                @*<a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>*@
+                                 @*<a class="dropdown-item" href="auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>*@
                                 @if (User.Identity?.IsAuthenticated == true)
                                 {
                                     <a class="dropdown-item" asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignOut"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
@@ -711,40 +704,40 @@
             </div>
         </header>
 
-        <!-- /.modal -->
-        <!-- ========== App Menu ========== -->
-        <div class="app-menu navbar-menu" style="border-right: 1px solid #0a2a78;">
-            <!-- LOGO -->
-            <div class="navbar-brand-box">
-                <!-- Dark Logo-->
-                <a href="index-2.html" class="logo logo-dark ">
-                    <span class="logo-sm">
-                        <img src="~/images/nddc-logo-sm.png" alt="" height="50" width="50">
-                    </span>
-                    <span class="logo-lg ">
-                        <img src="~/images/nddclogo.png" alt="" height="50" width="220">
-                    </span>
-                </a>
-                <!-- Light Logo-->
-                <a href="index-2.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="~/images/nddclogo.png.gif" alt="" height="150" width="220">
-                    </span>
-                    <span class="logo-lg">
-                        <img src="~/images/nddclogo.png" alt="" height="150" width="220">
-                    </span>
-                </a>
-                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-                    <i class="ri-record-circle-line"></i>
-                </button>
-            </div>
+        @if (User.Identity?.IsAuthenticated == true)
+        {
+            <div class="app-menu navbar-menu" style="border-right: 1px solid #0a2a78;">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <!-- Dark Logo-->
+                    <a href="index-2.html" class="logo logo-dark ">
+                        <span class="logo-sm">
+                            <img src="~/images/nddc-logo-sm.png" alt="" height="50" width="50">
+                        </span>
+                        <span class="logo-lg ">
+                            <img src="~/images/nddclogo.png" alt="" height="50" width="220">
+                        </span>
+                    </a>
+                    <!-- Light Logo-->
+                    <a href="index-2.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="~/images/nddclogo.png.gif" alt="" height="150" width="220">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="~/images/nddclogo.png" alt="" height="150" width="220">
+                        </span>
+                    </a>
+                    <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                        <i class="ri-record-circle-line"></i>
+                    </button>
+                </div>
 
-            @if (User.Identity?.IsAuthenticated == true)
-            {
-                
-            }
+                @if (User.Identity?.IsAuthenticated == true)
+                {
 
-             <div id="scrollbar">
+                }
+
+                <div id="scrollbar">
                     <div class="container-fluid">
 
                         <div id="two-column-menu">
@@ -754,20 +747,20 @@
                             <li class="menu-title"><span data-key="t-menu">Main Menu</span></li>
                             <li class="nav-item">
                                 <a class="nav-link text-white menu-link @ViewData["dashboard"]" href="/MainMenu/Dashboard">
-                                <i data-feather="home" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Dashboard</span>
+                                    <i data-feather="home" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Dashboard</span>
                                 </a>
                             </li>
-                           @*  <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Employees"]" href="/Employee/Employees">
-                                    <i data-feather="user" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Featured Projects</span>
-                                </a>
-                            </li> *@
+                            @*  <li class="nav-item">
+                        <a class="nav-link text-white menu-link @ViewData["Employees"]" href="/Employee/Employees">
+                        <i data-feather="user" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Featured Projects</span>
+                        </a>
+                        </li> *@
                             @if (User.IsInRole("Admin") || User.IsInRole("Super"))
                             {
                                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Reports</span></li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link" href="/Reports/ReportsList">
-                                        <i data-feather="archive" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Report List </span>
+                                        <i data-feather="archive" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Report List </span>
                                     </a>
                                 </li>
                             }
@@ -780,37 +773,7 @@
                             <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Home Page</span></li>
                             <li class="nav-item">
                                 <a class="nav-link text-white menu-link @ViewData["News"]" href="/Home/News/AllNews">
-                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >News</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Updates"]" href="/Home/Updates/AllUpdates">
-                                    <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Updates</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Home/PhotoSpeak/AllPhotos">
-                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Photo Speak</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Media/Videos/AllVideos">
-                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Videos</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Media/Sights/AllSights">
-                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Sights And Icons</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Testimonials"]" href="/Home/Testimonials/AllTestimonials">
-                                    <i data-feather="life-buoy" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Testimonials</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white menu-link @ViewData["Publications"]" href="/Home/Publications/AllPublications">
-                                    <i data-feather="dollar-sign" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Publications</span>
+                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">News</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -818,103 +781,106 @@
                                     <i data-feather="dollar-sign" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Announcements</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Updates"]" href="/Home/Updates/AllUpdates">
+                                    <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Updates</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Home/PhotoSpeak/AllPhotos">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Photo Speak</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Media/Videos/AllVideos">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Videos</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Photos"]" href="/Media/Sights/AllSights">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Sights And Icons</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Testimonials"]" href="/Home/Testimonials/AllTestimonials">
+                                    <i data-feather="life-buoy" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Testimonials</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["Publications"]" href="/Home/Publications/AllPublications">
+                                    <i data-feather="dollar-sign" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Publications</span>
+                                </a>
+                            </li>
+
 
 
                             <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Digital Services</span></li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">IReports</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/Home/Adverts/Tenders">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Tenders and Adverts</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
-                                <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Business Directory</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
-                                <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Skills Database</span>
-                            </a>
-                        </li>
-
-
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Service Gate</span></li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Inquiries</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
-                                <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Complaints</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
-                                <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Suggestions</span>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
+                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">IReports</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/Home/Adverts/Tenders">
+                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Tenders and Adverts</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
+                                    <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Business Directory</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Skills Database</span>
+                                </a>
+                            </li>
 
 
 
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Who We are</span></li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Our People</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
-                                <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Mission & Vision</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
-                                <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Master Plan</span>
-                            </a>
-                        </li>
+                            <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Who We are</span></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
+                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Our People</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Master Plan</span>
+                                </a>
+                            </li>
                             @if (User.IsInRole("Admin"))
                             {
                                 <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Payroll</span></li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link @ViewData["Benefits"]" href="/Payroll/PreviewListing">
-                                        <i data-feather="file-text" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Preview Listing</span>
+                                        <i data-feather="file-text" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Preview Listing</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link @ViewData["Benefits"]" href="/Payroll/RunPayroll">
-                                        <i data-feather="play-circle" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Run Payroll</span>
+                                        <i data-feather="play-circle" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Run Payroll</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link @ViewData["Benefits"]" href="/Payroll/ResetOnetimeData">
-                                        <i data-feather="play-circle" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Reset Onetime Data</span>
+                                        <i data-feather="play-circle" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Reset Onetime Data</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link @ViewData["Benefits"]" href="/Payroll/Benefits">
-                                        <i data-feather="layers" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Benefits</span>
+                                        <i data-feather="layers" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Benefits</span>
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link" href="widgets.html">
-                                        <i data-feather="user-minus" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Deductions</span>
+                                        <i data-feather="user-minus" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Deductions</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link" href="widgets.html">
-                                        <i data-feather="bar-chart-2" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >PAYE</span>
+                                        <i data-feather="bar-chart-2" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">PAYE</span>
                                     </a>
                                 </li>
                             }
@@ -925,7 +891,7 @@
 
                                 <li class="nav-item">
                                     <a class="nav-link text-white menu-link @ViewData["Benefits"]" href="/DataManagement/ExcelUploads/BulkDataUploads">
-                                        <i data-feather="layers" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Bulk Data Uploads</span>
+                                        <i data-feather="layers" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Bulk Data Uploads</span>
                                     </a>
                                 </li>
                                 @*<li class="nav-item">
@@ -945,34 +911,38 @@
                         <i data-feather="layers" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white" >Update Secretarial</span>
                         </a>
                         </li>*@
-                        <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Settings</span></li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
-                                <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Organizational Info</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
-                                <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Subscribers</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
-                                <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Job Titles</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
-                                <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">State Offices</span>
-                            </a>
-                        </li>
+                            <li class="menu-title"><i class="ri-more-fill"></i> <span data-key="t-pages">Settings</span></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["OurPeople"]" href="/WhoWeAre/OurPeople">
+                                    <i data-feather="users" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Organizational Info</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MissionAndVision"]" href="/WhoWeAre/MissionAndVision">
+                                    <i data-feather="align-justify" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Subscribers</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">Job Titles</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white menu-link @ViewData["MasterPlan"]" href="/WhoWeAre/MasterPlan">
+                                    <i data-feather="server" class="icon-dual text-white"></i> <span data-key="t-dashboards" class="text-white">State Offices</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <!-- Sidebar -->
                 </div>
 
-            <div class="sidebar-background opacity-100" style="background-color: #071D53;"></div>
-        </div>
+                <div class="sidebar-background opacity-100" style="background-color: #071D53;"></div>
+            </div>
+
+        }
+        <!-- /.modal -->
+        <!-- ========== App Menu ========== -->
         <div class="vertical-overlay"></div>
         <div class="main-content">
             <div class="page-content" style="background-color: #F3F6F9;">

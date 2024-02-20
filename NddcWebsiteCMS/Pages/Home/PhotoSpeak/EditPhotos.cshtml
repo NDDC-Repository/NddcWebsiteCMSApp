@@ -38,8 +38,9 @@
 
                         <div class="col-12">
                             <div class="mb-3">
+                                <input type="text" class="form-control bg-light border-0" asp-for="@Model.Photo.ImageUrl" hidden="true">
                                 <label class="form-label" for="customFile">Add Image (555 x 525 px)</label>
-                                <input type="file" asp-for="@Model.Photo.ImageUrl" class="form-control bg-light border-0" id="customFile" />
+                                <input type="file" asp-for="Upload" class="form-control bg-light border-0" id="customFile" />
                             </div>
                         </div>
                     </div>

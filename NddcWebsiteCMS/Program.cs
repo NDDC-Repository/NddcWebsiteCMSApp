@@ -1,3 +1,7 @@
+
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
 using WebsiteCMSLibrary.Data.HomePage;
 using WebsiteCMSLibrary.Data.HomePage.Announcement;
 using WebsiteCMSLibrary.Data.HomePage.Organization;
@@ -32,6 +36,21 @@ builder.Services.AddTransient<IOrganizationData, SQLOrganization>();
 builder.Services.AddTransient<ITestimonialsData, SQLTestimonials>();
 builder.Services.AddTransient<ISightsAndIconsData, SQLSightsAndIcons>();
 
+builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureADB2C"));
+
+builder.Services.AddAuthorization(options =>
+{
+    // By default, all incoming requests will be authorized according to 
+    // the default policy
+    options.FallbackPolicy = options.DefaultPolicy;
+});
+
+builder.Services.AddRazorPages(options => {
+    options.Conventions.AllowAnonymousToPage("/Index");
+})
+.AddMvcOptions(options => { })
+.AddMicrosoftIdentityUI();
 
 var app = builder.Build();
 
@@ -48,8 +67,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers();
 
 app.Run();

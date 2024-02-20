@@ -16,6 +16,7 @@ namespace NddcWebsiteCMS.Pages.Home.News
 
         [BindProperty ( SupportsGet = true)]
         public MyNewsModel News { get; set; }
+        
         [BindProperty]
         public IFormFile Upload { get; set; }
 
