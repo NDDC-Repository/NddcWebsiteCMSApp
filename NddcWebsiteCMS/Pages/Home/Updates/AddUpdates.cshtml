@@ -71,7 +71,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Project Description</label>
-                            <label id="editor" asp-for="@Model.Update.Description" for="editor"></label>
+                            <textarea class="form-control bg-light border-0" placeholder="Enter Project Description(280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Description" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
@@ -84,7 +84,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Community Challenges</label>
-                            <label id="editor2" asp-for="@Model.Update.Challenges"></label>
+                            <textarea class="form-control bg-light border-0" placeholder="Enter Community Challenges (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Challenges" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
@@ -97,7 +97,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Project Impact</label>
-                            <label id="editor3" asp-for="@Model.Update.Impact" for="editor"></label>
+                            <textarea class="form-control bg-light border-0" placeholder="Enter Project Impact (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Impact" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
@@ -126,7 +126,7 @@
     </div>
 </div>
 
-@section Scripts {
+@* @section Scripts {
     <!--Ck Editor-->
     <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
@@ -151,5 +151,5 @@
                 console.error(error);
             });
     </script>
-}
+} *@
 

@@ -1,0 +1,20 @@
+﻿@page
+@model NddcWebsiteCMS.Pages.Home.NewsPhotoGallery.DeleteNewsPhotosModel
+@{
+}
+<div>
+    <div class="text-center p-5">
+        <lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#FFBC0A" style="width:120px;height:120px">
+        </lord-icon>
+        <div class="mt-4">
+            <h4 class="mb-3">Delete News Photo</h4>
+            <p class="text-muted mb-4">Are You Sure You Want to Delete This Photo?</p>
+            <div class="hstack gap-2 justify-content-center">
+                <a href="Home/NewsPhotoGallery/AllNewsPhotos" class="btn btn-link link-primary fw-medium"><i class="ri-close-line me-1 align-middle"></i> Close</a>
+                <form method="post">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

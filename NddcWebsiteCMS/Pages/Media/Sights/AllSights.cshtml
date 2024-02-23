@@ -31,6 +31,8 @@
             
 
                 <div class="card-body">
+                    @foreach (var item in Model.Sights)
+                {
                     <div class="card border-0">
                         <div class="card-body bg-light rounded-4 p-3 d-flex">
                                 <div class="d-flex align-middle pb-2">
@@ -39,14 +41,11 @@
                                 </div>
                                 <div class="flex-grow-1 ms-3 d-flex justify-content-between">
                                     <div>
-                                        <p class=" fs-14 mb-1">Title </p>
-                                        <h6 class="mb-2 fs-12">Summary</h6>
+                                        <p class=" fs-14 mb-1">@item.Title</p>
+                                        <h6 class="mb-2 fs-12">@item.Summary</h6>
                                         <h6 class="mb-1 lh-base">
                                             <a href="#" class="text-reset">
-                                            Description: This is due to their excellent service, competitive pricing and customer support. 
-                                            It’s throughly refresing to get such a personal touch. 
-                                            
-                                            
+                                                @item.Details
                                             </a>
                                         </h6>
                                     </div>
@@ -59,230 +58,7 @@
                             </div><!-- end -->
                             </div>
                     </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                <div class="flex-shrink-0">
-                                    <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                    <div>
-                                        <p class=" fs-14 mb-1">Title </p>
-                                        <h6 class="mb-2 fs-12">Summary</h6>
-                                        <h6 class="mb-1 lh-base">
-                                            <a href="#" class="text-reset">
-                                            Description: This is due to their excellent service, competitive pricing and customer support. 
-                                            It’s throughly refresing to get such a personal touch. 
-                                            
-                                            
-                                            </a>
-                                        </h6>
-                                    </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                        <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                            <i  class="bx bx-dots-horizontal-rounded"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- end -->
-                            </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                <div class="flex-shrink-0">
-                                    <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                    <div>
-                                        <p class=" fs-14 mb-1">Title </p>
-                                        <h6 class="mb-2 fs-12">Summary</h6>
-                                        <h6 class="mb-1 lh-base">
-                                            <a href="#" class="text-reset">
-                                            Description: This is due to their excellent service, competitive pricing and customer support. 
-                                            It’s throughly refresing to get such a personal touch. 
-                                            
-                                            
-                                            </a>
-                                        </h6>
-                                    </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                        <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                            <i  class="bx bx-dots-horizontal-rounded"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div><!-- end -->
-                            </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                <div class="flex-shrink-0">
-                                    <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                    <div>
-                                        <p class=" fs-14 mb-1">Title </p>
-                                        <h6 class="mb-2 fs-12">Summary</h6>
-                                        <h6 class="mb-1 lh-base">
-                                            <a href="#" class="text-reset">
-                                            Description: This is due to their excellent service, competitive pricing and customer support. 
-                                            It’s throughly refresing to get such a personal touch. 
-                                            
-                                            
-                                            </a>
-                                        </h6>
-                                    </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                        <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                            <i  class="bx bx-dots-horizontal-rounded"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                <div class="flex-shrink-0">
-                                    <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                    <div>
-                                        <p class=" fs-14 mb-1">Title </p>
-                                        <h6 class="mb-2 fs-12">Summary</h6>
-                                        <h6 class="mb-1 lh-base">
-                                            <a href="#" class="text-reset">
-                                            Description: This is due to their excellent service, competitive pricing and customer support. 
-                                            It’s throughly refresing to get such a personal touch. 
-                                            
-                                            
-                                            </a>
-                                        </h6>
-                                    </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                        <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                            <i  class="bx bx-dots-horizontal-rounded"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                    <div class="flex-shrink-0">
-                                        <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                        <div>
-                                            <p class=" fs-14 mb-1">Title </p>
-                                            <h6 class="mb-2 fs-12">Summary</h6>
-                                            <h6 class="mb-1 lh-base">
-                                                <a href="#" class="text-reset">
-                                                Description: This is due to their excellent service, competitive pricing and customer support. 
-                                                It’s throughly refresing to get such a personal touch. 
-                                                
-                                                
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                            <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                                <i  class="bx bx-dots-horizontal-rounded"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                    <div class="flex-shrink-0">
-                                        <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                        <div>
-                                            <p class=" fs-14 mb-1">Title </p>
-                                            <h6 class="mb-2 fs-12">Summary</h6>
-                                            <h6 class="mb-1 lh-base">
-                                                <a href="#" class="text-reset">
-                                                Description: This is due to their excellent service, competitive pricing and customer support. 
-                                                It’s throughly refresing to get such a personal touch. 
-                                                
-                                                
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                            <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                                <i  class="bx bx-dots-horizontal-rounded"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                    <div class="flex-shrink-0">
-                                        <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                        <div>
-                                            <p class=" fs-14 mb-1">Title </p>
-                                            <h6 class="mb-2 fs-12">Summary</h6>
-                                            <h6 class="mb-1 lh-base">
-                                                <a href="#" class="text-reset">
-                                                Description: This is due to their excellent service, competitive pricing and customer support. 
-                                                It’s throughly refresing to get such a personal touch. 
-                                                
-                                                
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                            <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                                <i  class="bx bx-dots-horizontal-rounded"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
-                    <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
-                                <div class="d-flex align-middle pb-2">
-                                    <div class="flex-shrink-0">
-                                        <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                        <div>
-                                            <p class=" fs-14 mb-1">Title </p>
-                                            <h6 class="mb-2 fs-12">Summary</h6>
-                                            <h6 class="mb-1 lh-base">
-                                                <a href="#" class="text-reset">
-                                                Description: This is due to their excellent service, competitive pricing and customer support. 
-                                                It’s throughly refresing to get such a personal touch. 
-                                                
-                                                
-                                                </a>
-                                            </h6>
-                                        </div>
-                                        <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                            <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                                <i  class="bx bx-dots-horizontal-rounded"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- end -->
-                        </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

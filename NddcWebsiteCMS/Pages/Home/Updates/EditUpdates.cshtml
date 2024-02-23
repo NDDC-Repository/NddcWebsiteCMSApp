@@ -2,7 +2,7 @@
 @model NddcWebsiteCMS.Pages.Home.Updates.EditUpdatesModel
 @{
 }
-<div class="row">
+@* <div class="row">
     <div class="col-12">
         <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
             <h4 class="mb-sm-0">Add Updates</h4>
@@ -33,7 +33,7 @@
                     </div><!--end col-->
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">Update Category </label>
-                        <select class="form-select bg-light border-0 mb-3"  aria-label="Category">
+                        <select class="form-select bg-light border-0 mb-3" asp-for="@Model.Update.UpdateCategory" aria-label="Category">
                             <option selected="None">Select</option>
                             <option value="Physical">Physical Infrastructure </option>
                             <option value="Social">Social Infrastructure</option>
@@ -42,7 +42,7 @@
                     </div><!--end col-->
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">Program/Project Type  </label>
-                        <select class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
+                        <select class="form-select bg-light border-0 mb-3" asp-for="@Model.Update.ProjectProgramType" aria-label="Updates Type">
                             <option selected="">Select</option>
                             <option value="Roads and Bridges">Roads and Bridges </option>
                             <option value="Solar Water">Solar Water</option>
@@ -51,64 +51,64 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Project Title</label>
-                            <input type="text"  class="form-control bg-light border-0" placeholder="Enter Project Title(75 char.)" id="firstNameinput" maxlength="75">
+                            <input type="text" asp-for="@Model.Update.Title" class="form-control bg-light border-0" placeholder="Enter Project Title(75 char.)" id="firstNameinput" maxlength="75">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Project Location</label>
-                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Project Location(75 char.)" id="firstNameinput" maxlength="75">
+                            <input type="text" class="form-control asp-for="@Model.Update.Location" bg-light border-0" placeholder="Enter Project Location(75 char.)" id="firstNameinput" maxlength="75">
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Project Coordinates</label>
-                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Coordinates" id="firstNameinput">
+                            <input type="text" asp-for="@Model.Update.GISCordinates" class="form-control bg-light border-0" placeholder="Enter Coordinates" id="firstNameinput">
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Project Description</label>
-                            <label id="editor" for="editor"></label>
+                            <textarea class="form-control bg-light asp-for="@Model.Update.Description" border-0" placeholder="Project Description (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Impact" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Description Image (678 x 453 px)</label>
-                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.DescriptionImage" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Community Challenges</label>
-                            <label id="editor2"></label>
+                            <textarea class="form-control bg-light border-0" asp-for="@Model.Update.Challenges" placeholder="Enter Community Challenges (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Impact" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Challenge Image (678 x 453 px)</label>
-                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Project Impact</label>
-                            <label id="editor3" for="editor"></label>
+                            <textarea class="form-control bg-light border-0" asp-for="@Model.Update.Impact" placeholder="Enter Project Impact (280 char.)" id="exampleFormControlTextarea5" rows="3" asp-for="@Model.Update.Impact" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Impact Image (678 x 453 px)</label>
-                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.ImpactUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label">
-                                <input class="form-check-input me-1" type="checkbox" value="">
+                                <input class="form-check-input me-1" asp-for="@Model.Update.HomeFeatured" type="checkbox" value="">
                                 Set As Home Page Featured Project
                             </label>
                         </div>
@@ -156,4 +156,4 @@
             });
     </script>
 }
-
+ *@

@@ -1,0 +1,76 @@
+﻿@page "{Id:int?}"
+@model NddcWebsiteCMS.Pages.Services.IReport.EditIreportModel
+@{
+}
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
+            <h4 class="mb-sm-0">Edit Ireport</h4>
+
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">I Reports</a></li>
+                    <li class="breadcrumb-item active">Edit Ireport</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="card col-9 border rounded-4 justify-content-center">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="compnayNameinput" class="form-label">Report Type:</label>
+                        <select class="form-select bg-light border-0 bg-light border-0 mb-3" aria-label="Select what you want to report on">
+                            <option value="1">NDDC Ongoing Project</option>
+                            <option value="2">NDDC Abandoned Project</option>
+                            <option value="3">Poor Project Quality</option>
+                            <option value="4">Incompetent Contractor</option>
+                            <option value="5">NDDC Employee</option>
+                            <option value="6">NDDC Program</option>
+                            <option value="7">Other</option>
+                        </select>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Your Name(75 char.) " maxlength="75" id="firstNameinput">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="number" class="form-control bg-light border-0" placeholder="Enter Phone Number(75 char.) " maxlength="75" id="firstNameinput">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control bg-light border-0" placeholder="Enter Email Address(75 char.) " maxlength="75" id="firstNameinput">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="firstNameinput" class="form-label">Location</label>
+                            <input type="text" class="form-control bg-light border-0" placeholder="Enter Location(75 char.)" maxlength="75" id="firstNameinput">
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label" for="customFile">Upload Photos (555 x 525 px)</label>
+                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div><!--end col-->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
