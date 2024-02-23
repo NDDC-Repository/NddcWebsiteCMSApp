@@ -7,6 +7,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         void AddNews(MyNewsModel news);
 		void AddNewsPhotoGallery(MyNewsPhotoGalleryModel news);
 		List<MyNewsModel> AllNews();
+        List<MyNewsPhotoGalleryModel> AllPhotoGalleryImages(int id);
         void DeleteNews(int id);
 		void DeleteNewsPhotoGallery(int id);
 		List<MyNewsModel> DisplaySlides();

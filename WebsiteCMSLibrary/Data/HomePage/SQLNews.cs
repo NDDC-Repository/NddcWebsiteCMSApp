@@ -65,7 +65,11 @@ namespace WebsiteCMSLibrary.Data.HomePage
 		{
 			db.SaveData("Insert Into NewsPhotoGallery (NewsId, ImageUrl, AddedBy, DateAdded) values(@NewsId, @ImageUrl, @AddedBy, @DateAdded)", new { NewsId = news.NewsId, ImageUrl = news.ImageUrl, AddedBy = news.AddedBy, DateAdded = news.DateAdded }, connectionStringName, false);
 		}
-		public void DeleteNewsPhotoGallery(int id)
+        public List<MyNewsPhotoGalleryModel> AllPhotoGalleryImages(int nid)
+        {
+            return db.LoadData<MyNewsPhotoGalleryModel, dynamic>("Select Id, NewsId, ImageUrl, AddedBy, DateAdded From NewsPhotoGallery Where NewsId = @NId Order By Id DESC", new { NId = nid }, connectionStringName, false).ToList();
+        }
+        public void DeleteNewsPhotoGallery(int id)
 		{
 			db.SaveData("Delete NewsPhotoGallery Where Id = @Id", new { Id = id }, connectionStringName, false);
 		}

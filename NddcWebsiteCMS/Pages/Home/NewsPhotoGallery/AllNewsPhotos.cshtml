@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{Id:int?}"
 @model NddcWebsiteCMS.Pages.Home.NewsPhotoGallery.AllNewsPhotosModel
 @{
 }
@@ -21,7 +21,7 @@
     <div class="">
         <div class="p-3 justify-content-end align-items-center d-flex">
             <div>
-                <a asp-page="AddNewsPhotos" type="button" class="btn btn-primary">
+                <a asp-page="AddNewsPhotos" asp-route-Id="@Model.NId" type="button" class="btn btn-primary">
                     Add News Photo
                 </a>
             </div>
@@ -29,25 +29,29 @@
         <div class="card">
             <div class="card-body">
                 <div class="row d-flex">
-                    <div class="col-sm-6 col-xl-3">
-                        <!-- Simple card -->
-                        <div class="card">
-                            <img class="card-img-top img-fluid" src="/images/about.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text text-muted fs-12 mb-0">Date Added: 19/2/2024</p>
-                                <p class="card-text text-muted fs-12 mb-0">Added By: Tolofari Dagogo</p>
-                                <div class="text-end">
-                                    <a asp-page="DeleteNewsPhotos" class="fs-4 text-danger btn text-center">
-                                        <i class="las la-trash-alt"></i>
-                                    </a>
+                    @foreach (var item in Model.GalleryList)
+                    {
+                        <div class="col-sm-6 col-xl-3">
+                            <!-- Simple card -->
+                            <div class="card">
+                                <img class="card-img-top img-fluid" src="@Model._bucketName@item.ImageUrl" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text text-muted fs-12 mb-0">Date Added: @item.DateAdded</p>
+                                    <p class="card-text text-muted fs-12 mb-0">Added By: @item.AddedBy</p>
+                                    <div class="text-end">
+                                        <a asp-page="DeleteNewsPhotos" asp-route-Id="@item.Id" asp-route-nid="@item.NewsId" class="fs-4 text-danger btn text-center">
+                                            <i class="las la-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                    @* <div class="text-end">
+                                <button asp-page="EditPhotos" asp-route-Id="@item.Id" class="btn btn-secondary">Edit</button>
+                                <a asp-page="DeletePhoto" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+                                </div> *@
                                 </div>
-                                @* <div class="text-end">
-                            <button asp-page="EditPhotos" asp-route-Id="@item.Id" class="btn btn-secondary">Edit</button>
-                            <a asp-page="DeletePhoto" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
-                            </div> *@
-                            </div>
-                        </div><!-- end card -->
-                    </div> 
+                            </div><!-- end card -->
+                        </div>
+
+                    }
                 </div>
             </div>
         </div><!-- end card body -->

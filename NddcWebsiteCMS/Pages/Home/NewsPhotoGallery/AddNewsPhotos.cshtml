@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{Id:int?}"
 @model NddcWebsiteCMS.Pages.Home.NewsPhotoGallery.AddNewsPhotosModel
 @{
 }
@@ -21,23 +21,12 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
         <div class="card-body">
-            <form>
+            <form method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3">
-                            <label class="form-label">Date Added</label>
-                            <input type="date" asp-for="@Model.Gallery.DateAdded" class="form-control bg-light border-0" >
-                        </div>
-                    </div><!--end col-->
-                    <div class="col-12">
-                        <div class="mb-3">
-                            <label for="firstNameinput" class="form-label">Added By</label>
-                            <input type="text" asp-for="@Model.Gallery.AddedBy" class="form-control bg-light border-0" placeholder="Enter News Subject(75 char.)" maxlength="75" id="firstNameinput">
-                        </div><!--end col-->
-                    <div class="col-12">
-                        <div class="mb-3">
                             <label class="form-label" for="customFile">Add Image (555 x 525 px)</label>
-                            <input type="file" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" class="form-control bg-light border-0" asp-for="Upload" />
                         </div>
                     </div>
                     <div class="col-lg-12">

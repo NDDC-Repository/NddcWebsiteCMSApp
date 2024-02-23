@@ -70,7 +70,7 @@
                                         </h5>
                                         <p class="">@item.PublishDate <i class="mdi mdi-circle-medium align-middle mx-1"></i></p>
                                         @* <p class="">@item.Summary <i class="mdi mdi-circle-medium align-middle mx-1"></i></p> *@
-                                        <a href="/Home/NewsPhotoGallery/AllNewsPhotos" class="text-success">News Photo Gallery</a>
+                                        <a asp-page="/Home/NewsPhotoGallery/AllNewsPhotos" asp-route-Id="@item.NID" class="text-success">News Photo Gallery</a>
                                     </div>
                                 </div>
                                 <div>

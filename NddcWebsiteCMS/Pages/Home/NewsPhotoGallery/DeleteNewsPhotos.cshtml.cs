@@ -15,10 +15,10 @@ namespace NddcWebsiteCMS.Pages.Home.NewsPhotoGallery
         public void OnGet()
         {
         }
-        public IActionResult OnPost(int? Id)
+        public IActionResult OnPost(int? Id, int? nid)
         {
             galDb.DeleteNewsPhotoGallery(Id.Value);
-            return RedirectToPage("AllNewsPhotos");
+            return RedirectToPage("AllNewsPhotos", new { Id = nid.Value });
         }
         }
 }
