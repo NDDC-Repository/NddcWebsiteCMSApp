@@ -102,7 +102,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">News Details</label>
-                            <textarea class="form-control bg-light border-0" asp-for="@Model.News.Details" placeholder="Enter News Details (280 char.)" id="exampleFormControlTextarea5" rows="3" maxlength="280"></textarea>
+                            <label id="editor" asp-for="@Model.News.Details"></label>
                         </div>
                     </div><!--end col-->
 

@@ -19,7 +19,7 @@ namespace NddcWebsiteCMS.Pages.Home.Testimonial
         }
         public void OnGet(int? Id)
         {
-            //Testimonial = testDb.GetTestimonialDetails(Id.Value);
+            Testimonial = testDb.GetTestimonialDetails(Id.Value);
         }
         public IActionResult OnPost(int? Id)
         {

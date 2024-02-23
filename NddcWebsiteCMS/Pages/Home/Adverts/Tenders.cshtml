@@ -27,72 +27,37 @@
             </a>
         </div>
     </div><!-- end card-header -->
-    <table class="table table-hover">
-        <thead class="shadow border border-primary">
-            <tr class="text-primary fs-5">
-                <th scope="col">Project Title</th>
-                <th scope="col">Date of Adverts </th>
-                <th scope="col">Deadline Date</th>
-                <th scope="col">Category</th>
-                <th scope="col">View Documents</th>
+    <div class="card">
+        <div class="card-body p-5">
+            @* @foreach (var item in Model.Announcements)
+            { *@
+                <div class="row">
+                    <!-- Simple card -->
+                    <div class="card bg-light">
+                        <div class="card-body bg-light rounded-4 p-3">
+                        <div class="d-flex position-relative align-items-center justify-content-between"></div>
+                            <h4 class="card-title mb-2">Project Title</h4>
+                            <p class="text-muted fs-12 mb-0">Date of Adverts: StartDate </p><p class="text-muted fs-12 mb-0">Deadline Date: EndDate</p>
+                            <p>Category</p>
+                            <p>View Documents <i class="bx bx-down-arrow-alt"></i></p>
+                            <div class="flex-shrink-0 avatar-xs align-self-center me-3 mt-1">
+                                <div class="d-flex">
+                                    <a class="fs-4 ps-0 text-primary btn text-center" asp-page="EditAnnouncements">
+                                        <i class="las la-pen-square"></i>
+                                    </a>
+                                    <a class="fs-4 text-danger btn text-center" asp-page="DeleteAnnouncements">
+                                        <i class="las la-trash-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end card -->
+                </div>
+            @* } *@
+        </div>
 
-            </tr>
-        </thead>
-        <tbody class="text-opacity-25 bg-white" style="border: white;">
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-            <tr class="shadow-sm bg-body-tertiary rounded">
-                <th scope="row">Recent Project</th>
-                <td>15/03/2020</td>
-                <td>15/03/2024</td>
-                <td>Road</td>
-                <td class="text-center"><a><i class="bx bx-down-arrow-alt"></i></a></td>
-            </tr>
-        </tbody>
-    </table>
+    </div>
 </div>
-
 @section Scripts {
     <!--Ck Editor-->
     <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
