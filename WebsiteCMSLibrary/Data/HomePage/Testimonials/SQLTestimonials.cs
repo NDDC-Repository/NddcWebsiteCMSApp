@@ -31,9 +31,9 @@ namespace WebsiteCMSLibrary.Data.HomePage.Testimonials
 		{
 			db.SaveData("Update Testimonial Set TestimonialBy = @TestimonialBy, Occupation = @Occupation, Testimonial = @Testimonial Where Id = @Id", new { TestimonialBy = test.TestimonialBy, Occupation = test.Occupation, Testimonial = test.Testimonial }, connectionStringName, false);
 		}
-		public MyAnnouncementModel GetTestimonialDetails(int Id)
+		public MyTestimonialModel GetTestimonialDetails(int Id)
 		{
-			return db.LoadData<MyAnnouncementModel, dynamic>("Select TestimonialBy, Testimonial, Occupation From Testimonial Where Id = @Id", new { Id = Id }, connectionStringName, false).FirstOrDefault();
+			return db.LoadData<MyTestimonialModel, dynamic>("Select TestimonialBy, Testimonial, Occupation From Testimonial Where Id = @Id", new { Id = Id }, connectionStringName, false).FirstOrDefault();
 		}
 		public void DeleteTestimonial(int Id)
 		{

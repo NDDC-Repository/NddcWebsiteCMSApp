@@ -7,7 +7,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Testimonials
 		void AddTestimonial(MyTestimonialModel test);
 		List<MyTestimonialModel> AllTestimonials();
 		void DeleteTestimonial(int Id);
-		MyAnnouncementModel GetTestimonialDetails(int Id);
+		MyTestimonialModel GetTestimonialDetails(int Id);
 		void UpdateTestimonial(MyTestimonialModel test);
 	}
 }
