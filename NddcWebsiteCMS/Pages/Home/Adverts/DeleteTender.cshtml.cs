@@ -1,22 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Reflection;
 using WebsiteCMSLibrary.Data.HomePage.Tenders;
 using WebsiteCMSLibrary.Model.HomePage;
 
 namespace NddcWebsiteCMS.Pages.Home.Adverts
 {
-    public class TendersModel : PageModel
+    public class DeleteTenderModel : PageModel
     {
         private readonly ITendersData tenderDb;
-        public List<MyTenderModel> Tenders { get; set; }
-        public TendersModel(ITendersData tenderDb)
+        public MyTenderModel Tender { get; set; }
+        public DeleteTenderModel(ITendersData tenderDb)
         {
             this.tenderDb = tenderDb;
         }
         public void OnGet()
         {
-            Tenders = tenderDb.AllTenders();
+        }
+        public IActionResult OnPost(int? Id)
+        {
+            tenderDb.DeleteTender(Id.Value);
+
+            return RedirectToPage("Tenders");
         }
     }
 }

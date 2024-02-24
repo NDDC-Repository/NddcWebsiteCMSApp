@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Home\Adverts\EditTender.cshtml" />
     <Content Remove="Pages\Home\Publications\DeletePublications.cshtml" />
   </ItemGroup>
 
@@ -25,10 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Home\Adverts\EditTender.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\Home\Publications\DeletePublications.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Pages\Home\Adverts\EditTender.cshtml" />
     <None Include="Pages\Home\Publications\DeletePublications.cshtml" />
   </ItemGroup>
 
@@ -37,6 +40,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="6.0.0" />
     <PackageReference Include="Microsoft.Identity.Web" Version="1.25.10" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="1.25.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Home\Adverts\EditTender.cshtml" />
   </ItemGroup>
 
 </Project>

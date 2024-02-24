@@ -5,21 +5,23 @@ using WebsiteCMSLibrary.Model.HomePage;
 
 namespace NddcWebsiteCMS.Pages.Home.Adverts
 {
-    public class AddTendersModel : PageModel
+    public class EditTenderModel : PageModel
     {
         private readonly ITendersData tenderDb;
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public MyTenderModel Tender { get; set; }
-        public AddTendersModel(ITendersData tenderDb)
+        public EditTenderModel(ITendersData tenderDb)
         {
             this.tenderDb = tenderDb;
         }
-        public void OnGet()
+        public void OnGet(int? Id)
         {
+            //Tender = tenderDb.ViewTenderDetails(Id.Value);
         }
-        public IActionResult OnPost()
+        public IActionResult OnPost(int? Id)
         {
-            tenderDb.AddTender(Tender);
+            Tender.Id = Id.Value;
+            tenderDb.EditTender(Tender);
 
             return RedirectToPage("Tenders");
         }
