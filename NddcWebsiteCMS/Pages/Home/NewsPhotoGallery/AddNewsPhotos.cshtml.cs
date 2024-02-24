@@ -36,7 +36,7 @@ namespace NddcWebsiteCMS.Pages.Home.NewsPhotoGallery
             string fileName = "Photos/" + Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(Upload.FileName));
             // + Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(file.Name)
             //MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
-            MyBlobResponseModel ? response = await storage.UploadAsync(Upload, fileName);
+            MyBlobResponseModel ? response = await storage.UploadAndResizeImageAsync(Upload, 555, 525, fileName);
             Gallery.ImageUrl = response.Blob.Uri;
             Gallery.DateAdded = DateTime.Now;
             Gallery.AddedBy = "Admin";

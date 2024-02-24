@@ -28,9 +28,9 @@ namespace WebsiteCMSLibrary.Data.HomePage.Tenders
         {
             return db.LoadData<MyTenderModel, dynamic>("Select Id, Titel, Category, DocumentUrl, AdvertDate, DeadlioneDate From Tenders Order By Id DESC", new { }, connectionStringName, false).ToList();
         }
-        public List<MyTenderModel> ViewTenderDetails(int Id)
+        public MyTenderModel ViewTenderDetails(int Id)
         {
-            return db.LoadData<MyTenderModel, dynamic>("Select Id, Titel, Category, Details, DocumentUrl, AdvertDate, DeadlioneDate From Tenders Where Id = @Id Order By Id DESC", new { Id }, connectionStringName, false).ToList();
+            return db.LoadData<MyTenderModel, dynamic>("Select Id, Titel, Category, Details, DocumentUrl, AdvertDate, DeadlioneDate From Tenders Where Id = @Id Order By Id DESC", new { Id }, connectionStringName, false).FirstOrDefault();
         }
 
         public void DeleteTender(int id)

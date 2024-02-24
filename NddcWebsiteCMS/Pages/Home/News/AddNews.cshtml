@@ -103,7 +103,11 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">News Details</label>
-                            <label id="editor" bg-light="" border-0"="" for="News_Details" style="display: none;">Details</label>
+                            @* <label id="editor" bg-light="" border-0"="" for="News_Details" style="display: none;">Details</label> *@
+                            <input type="hidden" id="editorContent" asp-for="@Model.News.Details" />
+                            <textarea id="editor">
+
+                            </textarea>
                         </div>
                     </div><!--end col-->
 
@@ -127,6 +131,12 @@
     <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
+            .then(editor => {
+                editor.model.document.on('change:data', () => {
+                    const content = editor.getData();
+                    document.querySelector('#editorContent').value = content;
+                });
+            })
             .catch(error => {
                 console.error(error);
             });

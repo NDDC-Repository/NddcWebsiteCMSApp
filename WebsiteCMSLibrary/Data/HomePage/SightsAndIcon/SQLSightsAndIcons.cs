@@ -27,7 +27,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.SightsAndIcon
 		{
 			return db.LoadData<MySightsAndIconsModel, dynamic>("select ROW_NUMBER() OVER (ORDER BY Id DESC) As SrNo, Id, Title, Summary, ImageUrl, Details, DateAdded from SightsAndIcons Order By Id DESC", new { }, connectionStringName, false).ToList();
 		}
-		public void UpdateAnnouncement(MySightsAndIconsModel sight)
+		public void UpdateSightsAndIcons(MySightsAndIconsModel sight)
 		{
 			db.SaveData("Update SightsAndIcons Set Title = @Title, Summary = @Summary, ImageUrl = @ImageUrl, Details = @Details Where Id = @Id", new { Title = sight.Title, Summary = sight.Summary, ImageUrl = sight.ImageUrl, Details = sight.Details, Id = sight.Id }, connectionStringName, false);
 		}

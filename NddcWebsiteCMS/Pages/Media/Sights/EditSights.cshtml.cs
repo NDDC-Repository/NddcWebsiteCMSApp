@@ -21,7 +21,7 @@ namespace NddcWebsiteCMS.Pages.Media.Sights
         public IActionResult OnPost(int? Id)
         {
             Sights.Id = Id.Value;
-            sightsDb.UpdateAnnouncement(Sights);
+            sightsDb.UpdateSightsAndIcons(Sights);
 
             return RedirectToPage("AllAnnouncements");
         }

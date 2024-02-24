@@ -8,6 +8,6 @@ namespace WebsiteCMSLibrary.Data.HomePage.SightsAndIcon
 		List<MySightsAndIconsModel> AllSightsAndIcons();
 		void DeleteAnnouncement(int Id);
 		MySightsAndIconsModel GetSightAndIconsDetails(int Id);
-		void UpdateAnnouncement(MySightsAndIconsModel sight);
+		void UpdateSightsAndIcons(MySightsAndIconsModel sight);
 	}
 }

@@ -8,6 +8,6 @@ namespace WebsiteCMSLibrary.Data.HomePage.Tenders
         List<MyTenderModel> AllTenders();
         void DeleteTender(int id);
         void EditTender(MyTenderModel tender);
-        List<MyTenderModel> ViewTenderDetails(int Id);
+        MyTenderModel ViewTenderDetails(int Id);
     }
 }

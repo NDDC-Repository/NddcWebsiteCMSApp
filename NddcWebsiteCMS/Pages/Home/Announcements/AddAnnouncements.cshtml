@@ -46,7 +46,11 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="citynameInput" class="form-label">Announcement Details</label>
-                        <input id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;">
+                        @* <input id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;"> *@
+                        <input type="hidden" id="editorContent" asp-for="@Model.Announcement.Details" />
+                        <textarea id="editor">
+                            
+                        </textarea>
                     </div>
                 </div><!--end col-->
             </div>
@@ -64,9 +68,22 @@
     <!--Ck Editor-->
     <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
+    @* <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script> *@
     <script>
         ClassicEditor
             .create(document.querySelector('#editor'))
+            .then(editor => {
+                editor.model.document.on('change:data', () => {
+                    const content = editor.getData();
+                    document.querySelector('#editorContent').value = content;
+                });
+            })
             .catch(error => {
                 console.error(error);
             });

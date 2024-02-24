@@ -51,7 +51,7 @@ namespace WebsiteCMSLibrary.Data.HomePage
         }
         public MyNewsModel GetNewsDetails(int Id)
         {
-            return db.LoadData<MyNewsModel, dynamic>("select NID, Subject, Summary, NDID, ImageUrl, PublishDate, Type, ExpiryDate, SetAsSlide, DisplayFormat from News where NID = @NID", new { NID = Id }, connectionStringName, false).SingleOrDefault();
+            return db.LoadData<MyNewsModel, dynamic>("select NID, Subject, Summary, Details, NDID, ImageUrl, PublishDate, Type, ExpiryDate, SetAsSlide, DisplayFormat from News where NID = @NID", new { NID = Id }, connectionStringName, false).SingleOrDefault();
         }
         public void DeleteNews(int id)
         {
