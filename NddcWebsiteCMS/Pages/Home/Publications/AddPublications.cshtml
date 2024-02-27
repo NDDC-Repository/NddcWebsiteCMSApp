@@ -58,10 +58,7 @@
                         <div class="mb-3">
                             <label for="basic-url">Upload Publications URL</label>
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3">https://</span>
-                                </div>
-                                <input type="text" asp-for="@Model.Publication.PubUploadUrl"  class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                                <input type="file" asp-for="@Model.Publication.PubUploadUrl" class="form-control bg-light border-0" id="basic-url" aria-describedby="basic-addon3">
                             </div>
                         </div>
                     </div>

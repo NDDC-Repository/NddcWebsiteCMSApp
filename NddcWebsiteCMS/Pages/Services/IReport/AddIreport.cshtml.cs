@@ -5,6 +5,10 @@ namespace NddcWebsiteCMS.Pages.Services.IReport
 {
     public class AddIreportModel : PageModel
     {
+        public AddIreportModel()
+        {
+                
+        }
         public void OnGet()
         {
         }

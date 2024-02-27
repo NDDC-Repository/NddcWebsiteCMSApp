@@ -49,10 +49,15 @@
                                             </a>
                                         </h6>
                                     </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                        <a href="/Home/News/EditNews" class="avatar-title bg-light rounded-circle fs-16 text-primary btn ">
-                                            <i  class="bx bx-dots-horizontal-rounded"></i>
-                                        </a>
+                                    <div class="flex-shrink-0 avatar-xs align-self-center me-5">
+                                        <div class="d-flex">
+                                            <a asp-page="EditSights" asp-route-Id="@item.Id" class="fs-4 p-0 text-primary btn text-center">
+                                                <i class="las la-pen-square"></i>
+                                            </a>
+                                            <a asp-page="DeleteSights" asp-route-Id="@item.Id" class="fs-4 pt-0 text-danger btn text-center">
+                                                <i class="las la-trash-alt"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div><!-- end -->

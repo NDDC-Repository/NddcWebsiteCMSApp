@@ -1,8 +1,8 @@
-﻿@page
+﻿@* @page
 @model NddcWebsiteCMS.Pages.Home.Updates.EditUpdatesModel
 @{
 }
-@* <div class="row">
+<div class="row">
     <div class="col-12">
         <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
             <h4 class="mb-sm-0">Add Updates</h4>
@@ -76,7 +76,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Description Image (678 x 453 px)</label>
-                            <input type="file" asp-for="@Model.DescriptionImage" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.Update.DescriptionImage" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
@@ -89,7 +89,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Challenge Image (678 x 453 px)</label>
-                            <input type="file" asp-for="@Model.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.Update.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
@@ -156,4 +156,5 @@
             });
     </script>
 }
+
  *@

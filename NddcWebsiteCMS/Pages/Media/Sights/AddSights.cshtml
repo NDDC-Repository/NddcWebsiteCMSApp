@@ -35,14 +35,23 @@
                             <textarea type="text" asp-for="@Model.Sights.Summary" class="form-control bg-light border-0" placeholder="Enter Summary (280 char.)" id="firstNameinput" maxlength="280"></textarea>
                     </div>
                 </div><!--end col-->
-
-                <!--Editor-->
                 <div class="col-12">
                     <div class="mb-3">
-                        <label for="citynameInput" class="form-label">Sight Description</label>
-                            <textarea type="text" asp-for="@Model.Sights.Details" class="form-control bg-light border-0" placeholder="Enter Description (280 char.)" id="firstNameinput" maxlength="280"></textarea>
+                        <label class="form-label" for="customFile">Add Image (555 x 525 px)</label>
+                        <input type="file" asp-for="Upload" class="form-control bg-light border-0" id="customFile" />
                     </div>
-                </div><!--end col-->
+                </div>
+                    <!--Editor-->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="citynameInput" class="form-label">Sights Details</label>
+                            @* <input id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;"> *@
+                            <input type="hidden" id="editorContent" asp-for="@Model.Sights.Details" />
+                            <textarea id="editor">
+
+                            </textarea>
+                        </div>
+                    </div><!--end col-->
             <div class="col-lg-12">
                     <div class="text-end">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -60,10 +69,16 @@
 
     <script>
         ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                editor.model.document.on('change:data', () => {
+                    const content = editor.getData();
+                    document.querySelector('#editorContent').value = content;
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
      
 }
