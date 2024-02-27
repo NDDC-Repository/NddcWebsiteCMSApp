@@ -21,7 +21,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.SightsAndIcon
 		{
 			DateTime dateAdded = DateTime.Now;
 			string addedBy = "Admin";
-			db.SaveData("Insert Into Announcements (Title, Summary, ImageUrl, Details, DateAdded, AddedBy) values(@Title, @Summary, @ImageUrl, @Details, @DateAdded, @AddedBy)", new { Titel = sight.Title, Summary = sight.Summary, ImageUrl = sight.ImageUrl, Details = sight.Details, DateAdded = dateAdded, AddedBy = addedBy }, connectionStringName, false);
+			db.SaveData("Insert Into SightsAndIcons (Title, Summary, ImageUrl, Details, DateAdded, AddedBy) values(@Title, @Summary, @ImageUrl, @Details, @DateAdded, @AddedBy)", new { Title = sight.Title, Summary = sight.Summary, ImageUrl = sight.ImageUrl, Details = sight.Details, DateAdded = dateAdded, AddedBy = addedBy }, connectionStringName, false);
 		}
 		public List<MySightsAndIconsModel> AllSightsAndIcons()
 		{

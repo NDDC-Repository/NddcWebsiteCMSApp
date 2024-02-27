@@ -8,7 +8,7 @@ namespace WebsiteCMSLibrary.Model.HomePage
 {
     public class MyPublicationModel
     {
-        public int Id { get; set; }
+        public int PubId { get; set; }
         public string PubTitle { get; set; }
         public string PubSummary { get; set; }
         public string PubThumbImage { get; set; }

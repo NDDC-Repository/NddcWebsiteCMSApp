@@ -27,16 +27,16 @@ namespace WebsiteCMSLibrary.Data.HomePage.Publications
         }
         public List<MyPublicationModel> AllPublications()
         {
-            return db.LoadData<MyPublicationModel, dynamic>("Select Id, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Order By Id DESC", new { }, connectionStringName, false).ToList();
+            return db.LoadData<MyPublicationModel, dynamic>("Select PubId, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Order By PubId DESC", new { }, connectionStringName, false).ToList();
         }
 
         public void DeletePublication(int id)
         {
-            db.SaveData("Delete Publications Where Id = @Id", new { Id = id }, connectionStringName, false);
+            db.SaveData("Delete Publications Where PubId = @Id", new { Id = id }, connectionStringName, false);
         }
         public void EditPublication(MyPublicationModel pub)
         {
-            db.SaveData("Update Publications Set PubTitle = @PubTitle, PubSummary = @PubSummary, PubThumImage = @PubThumbImage, PubUploadUrl = @PubUploadUrl Where Id = @Id", new { pub.PubTitle, pub.PubSummary, pub.PubThumbImage, pub.PubUploadUrl }, connectionStringName, false);
+            db.SaveData("Update Publications Set PubTitle = @PubTitle, PubSummary = @PubSummary, PubThumImage = @PubThumbImage, PubUploadUrl = @PubUploadUrl Where PubId = @PubId", new { pub.PubTitle, pub.PubSummary, pub.PubThumbImage, pub.PubUploadUrl, pub.PubId }, connectionStringName, false);
         }
     }
 }

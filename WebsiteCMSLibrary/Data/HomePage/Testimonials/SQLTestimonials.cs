@@ -29,7 +29,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Testimonials
 		}
 		public void UpdateTestimonial(MyTestimonialModel test)
 		{
-			db.SaveData("Update Testimonial Set TestimonialBy = @TestimonialBy, Occupation = @Occupation, Testimonial = @Testimonial Where Id = @Id", new { TestimonialBy = test.TestimonialBy, Occupation = test.Occupation, Testimonial = test.Testimonial }, connectionStringName, false);
+			db.SaveData("Update Testimonial Set TestimonialBy = @TestimonialBy, Occupation = @Occupation, Testimonial = @Testimonial Where Id = @Id", new { TestimonialBy = test.TestimonialBy, Occupation = test.Occupation, Testimonial = test.Testimonial, test.Id }, connectionStringName, false);
 		}
 		public MyTestimonialModel GetTestimonialDetails(int Id)
 		{
