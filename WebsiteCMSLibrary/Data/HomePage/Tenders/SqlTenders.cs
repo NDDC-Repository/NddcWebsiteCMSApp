@@ -30,7 +30,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Tenders
         }
         public MyTenderModel ViewTenderDetails(int Id)
         {
-            return db.LoadData<MyTenderModel, dynamic>("Select Id, Titel, Category, Details, DocumentUrl, AdvertDate, DeadlineDate From Tenders Where Id = @Id Order By Id DESC", new { Id }, connectionStringName, false).FirstOrDefault();
+            return db.LoadData<MyTenderModel, dynamic>("Select Id, Title, Category, Details, DocumentUrl, AdvertDate, DeadlineDate From Tenders Where Id = @Id Order By Id DESC", new { Id }, connectionStringName, false).FirstOrDefault();
         }
 
         public void DeleteTender(int id)

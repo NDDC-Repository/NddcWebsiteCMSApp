@@ -34,30 +34,27 @@
                     @foreach (var item in Model.Sights)
                 {
                     <div class="card border-0">
-                        <div class="card-body bg-light rounded-4 p-3 d-flex">
+                        <div class="card-body bg-light rounded-4 p-3">
+                            <div class="flex-grow-1 ms-3 d-flex justify-content-between">
                                 <div class="d-flex align-middle pb-2">
-                                <div class="flex-shrink-0">
-                                    <img src="/images/small/img-1.jpg" class="rounded img-fluid" style="height:120px;" alt="">
-                                </div>
-                                <div class="flex-grow-1 ms-3 d-flex justify-content-between">
-                                    <div>
+                                    <div class="flex-grow-1 me-3 d-flex justify-content-between">
+                                        <img src="@Model._bucketName@item.ImageUrl" class="rounded img-fluid avatar-xl" alt="">
+                                    </div>
+                                    <div> 
                                         <p class=" fs-14 mb-1">@item.Title</p>
                                         <h6 class="mb-2 fs-12">@item.Summary</h6>
-                                        <h6 class="mb-1 lh-base">
-                                            <a href="#" class="text-reset">
-                                                @item.Details
-                                            </a>
-                                        </h6>
+                                        <p class="text-muted fs-12 mb-0">@item.DateAdded <i class="mdi mdi-circle-medium align-middle mx-1"></i>@item.AddedBy</p>
                                     </div>
-                                    <div class="flex-shrink-0 avatar-xs align-self-center me-5">
-                                        <div class="d-flex">
-                                            <a asp-page="EditSights" asp-route-Id="@item.Id" class="fs-4 p-0 text-primary btn text-center">
-                                                <i class="las la-pen-square"></i>
-                                            </a>
-                                            <a asp-page="DeleteSights" asp-route-Id="@item.Id" class="fs-4 pt-0 text-danger btn text-center">
-                                                <i class="las la-trash-alt"></i>
-                                            </a>
-                                        </div>
+
+                                </div>
+                                <div class="flex-shrink-0 avatar-xs align-self-center me-5">
+                                    <div class="d-flex">
+                                        <a asp-page="EditSights" asp-route-Id="@item.Id" class="fs-4 p-0 text-primary btn text-center">
+                                            <i class="las la-pen-square"></i>
+                                        </a>
+                                        <a asp-page="DeleteSights" asp-route-Id="@item.Id" class="fs-4 pt-0 text-danger btn text-center">
+                                            <i class="las la-trash-alt"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div><!-- end -->

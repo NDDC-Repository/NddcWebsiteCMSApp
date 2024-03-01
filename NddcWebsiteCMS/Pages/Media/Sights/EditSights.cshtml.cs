@@ -37,7 +37,7 @@ namespace NddcWebsiteCMS.Pages.Media.Sights
             Sights.Id = Id.Value;
             sightsDb.UpdateSightsAndIcons(Sights);
 
-            return RedirectToPage("AllAnnouncements");
+            return RedirectToPage("AllSights");
         }
     }
 }

@@ -18,6 +18,7 @@ namespace NddcWebsiteCMS.Pages.Media.Sights
         
         [BindProperty]
         public IFormFile Upload { get; set; }
+
         public AddSightsModel(ISightsAndIconsData sightsDb, IAzureStorage storage)
         {
             this.sightsDb = sightsDb;

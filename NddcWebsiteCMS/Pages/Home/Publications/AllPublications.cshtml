@@ -39,11 +39,11 @@
                         <div class="card bg-light">
                         <img class="card-img-top img-fluid" src="/images/small/img-1.jpg" alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title mb-2">A New Dawn Is Here</h4>
-                            <p class="fs-10">Publication Summary</p>
-                            <p class="text-muted fs-12 mb-0">Uploaded By: Tolofari Dagogo</p>
-                            <p class="text-muted fs-12 mb-0">Date Uploaded: Dec 12, 2021</p>
-                            <a href="" class="fs-10">View Publication</a>
+                            <h4 class="card-title mb-2">@item.PubTitle</h4>
+                            <p class="fs-10">@item.PubSummary</p>
+                            <p class="text-muted fs-12 mb-0">Uploaded By: @item.UploadedBy</p>
+                            <p class="text-muted fs-12 mb-0">Date Uploaded:@item.DateUploaded</p>
+                                    <a href="@item.PubUploadUrl" class="fs-10">View Publication <i class="bx bx-down-arrow-alt">@item.PubUploadUrl</i></a>
                             <div class="text-end">
                                 <a asp-page="EditPublications" class="fs-4 p-0 text-primary btn text-center">
                                     <i class="las la-pen-square"></i>

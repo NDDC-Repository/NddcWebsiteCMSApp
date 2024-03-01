@@ -16,7 +16,7 @@ namespace NddcWebsiteCMS.Pages.Home.Adverts
         }
         public void OnGet(int? Id)
         {
-            //Tender = tenderDb.ViewTenderDetails(Id.Value);
+            Tender = tenderDb.ViewTenderDetails(Id.Value);
         }
         public IActionResult OnPost(int? Id)
         {
