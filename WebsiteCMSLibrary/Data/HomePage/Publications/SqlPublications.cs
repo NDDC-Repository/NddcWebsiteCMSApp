@@ -29,8 +29,11 @@ namespace WebsiteCMSLibrary.Data.HomePage.Publications
         {
             return db.LoadData<MyPublicationModel, dynamic>("Select PubId, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Order By PubId DESC", new { }, connectionStringName, false).ToList();
         }
-
-        public void DeletePublication(int id)
+		public MyTenderModel ViewPublicationDetails(int Id)
+		{
+			return db.LoadData<MyTenderModel, dynamic>("Select PubId, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Where PubId = @Id", new { PubId = Id }, connectionStringName, false).FirstOrDefault();
+		}
+		public void DeletePublication(int id)
         {
             db.SaveData("Delete Publications Where PubId = @Id", new { Id = id }, connectionStringName, false);
         }

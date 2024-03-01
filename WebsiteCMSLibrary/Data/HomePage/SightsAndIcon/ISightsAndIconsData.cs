@@ -6,7 +6,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.SightsAndIcon
 	{
 		void AddSightsAndIcons(MySightsAndIconsModel sight);
 		List<MySightsAndIconsModel> AllSightsAndIcons();
-		void DeleteAnnouncement(int Id);
+		void DeleteSightsAndIcons(int Id);
 		MySightsAndIconsModel GetSightAndIconsDetails(int Id);
 		void UpdateSightsAndIcons(MySightsAndIconsModel sight);
 	}

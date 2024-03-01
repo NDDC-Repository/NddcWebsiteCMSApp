@@ -35,7 +35,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.SightsAndIcon
 		{
 			return db.LoadData<MySightsAndIconsModel, dynamic>("Select Title, Summary, ImageUrl, Details From SightsAndIcons Where Id = @Id", new { Id = Id }, connectionStringName, false).FirstOrDefault();
 		}
-		public void DeleteAnnouncement(int Id)
+		public void DeleteSightsAndIcons(int Id)
 		{
 			db.SaveData("Delete SightsAndIcons Where Id = @Id", new { Id = Id }, connectionStringName, false);
 		}
