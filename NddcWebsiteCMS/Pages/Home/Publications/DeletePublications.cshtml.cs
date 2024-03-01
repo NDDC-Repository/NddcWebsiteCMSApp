@@ -5,6 +5,10 @@ namespace NddcWebsiteCMS.Pages.Home.Publications
 {
     public class DeletePublicationsModel : PageModel
     {
+        public DeletePublicationsModel()
+        {
+            
+        }
         public void OnGet()
         {
         }

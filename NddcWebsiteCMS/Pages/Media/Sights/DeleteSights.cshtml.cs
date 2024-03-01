@@ -18,9 +18,9 @@ namespace NddcWebsiteCMS.Pages.Media.Sights
         }
         public IActionResult OnPost(int? Id)
         {
-            //sightsDb.(Id.Value);
+            sightsDb.DeleteAnnouncement(Id.Value);
 
-            return RedirectToPage("Tenders");
+            return RedirectToPage("AllSights");
         }
     }
 }

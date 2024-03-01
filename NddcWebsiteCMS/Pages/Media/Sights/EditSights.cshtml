@@ -5,12 +5,12 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-sm-flex align-items-center justify-content-between py-4">
-            <h4 class="mb-sm-0">Add Sights</h4>
+            <h4 class="mb-sm-0">Edit Sights</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Sights</a></li>
-                    <li class="breadcrumb-item active">Add Sights</li>
+                    <li class="breadcrumb-item active">Edit Sights</li>
                 </ol>
             </div>
 
@@ -20,7 +20,7 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
         <div class="card-body">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3">
@@ -34,15 +34,9 @@
                             <textarea type="text" asp-for="@Model.Sights.Summary" class="form-control bg-light border-0" placeholder="Enter Summary (280 char.)" id="firstNameinput" maxlength="280"></textarea>
                         </div>
                     </div><!--end col-->
-                    <!--Editor-->
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="citynameInput" class="form-label">Sight Description</label>
-                            <textarea type="text" asp-for="@Model.Sights.Details" class="form-control bg-light border-0" placeholder="Enter Description (280 char.)" id="firstNameinput" maxlength="280"></textarea>
-                        </div>
-                    </div><!--end col-->
-                    <div class="col-12">
-                        <div class="mb-3">
+                            <input type="text" class="form-control bg-light border-0" asp-for="@Model.Sights.ImageUrl" hidden="true">
                             <label class="form-label" for="customFile">Add Image (555 x 525 px)</label>
                             <input type="file" asp-for="Upload" class="form-control bg-light border-0" id="customFile" />
                         </div>
@@ -54,7 +48,7 @@
                             @* <input id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;"> *@
                             <input type="hidden" id="editorContent" asp-for="@Model.Sights.Details" />
                             <textarea id="editor">
-
+                                @Model.Sights.Details
                             </textarea>
                         </div>
                     </div><!--end col-->

@@ -15,7 +15,7 @@ namespace NddcWebsiteCMS.Pages.Home.Publications
         [BindProperty]
         public MyPublicationModel Publication { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public IFormFile Upload { get; set; }
 
         public AddPublicationsModel(IPublicationsData pubDb, IAzureStorage storage)

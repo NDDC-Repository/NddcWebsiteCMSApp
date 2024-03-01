@@ -21,7 +21,7 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
     <div class="card-body">
-        <form method="post">
+            <form method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
@@ -45,7 +45,6 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="citynameInput" class="form-label">Sights Details</label>
-                            @* <input id="editor" asp-for="@Model.Announcement.Details" bg-light="" border-0"="" for="News_Details" style="display: none;"> *@
                             <input type="hidden" id="editorContent" asp-for="@Model.Sights.Details" />
                             <textarea id="editor">
 
