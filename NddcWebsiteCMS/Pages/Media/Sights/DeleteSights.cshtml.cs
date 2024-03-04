@@ -18,7 +18,7 @@ namespace NddcWebsiteCMS.Pages.Media.Sights
         }
         public IActionResult OnPost(int? Id)
         {
-            sightsDb.DeleteAnnouncement(Id.Value);
+            sightsDb.DeleteSightsAndIcons(Id.Value);
 
             return RedirectToPage("AllSights");
         }

@@ -19,6 +19,8 @@ namespace NddcWebsiteCMS.Pages.Home.Testimonial
         }
 		public IActionResult OnPost()
 		{
+            Testimonial.DateAdded = DateTime.Now;
+
 			testDb.AddTestimonial(Testimonial);
 
 			return RedirectToPage("AllTestimonials");

@@ -29,11 +29,9 @@ namespace NddcWebsiteCMS.Pages.Home.Publications
         }
         public async Task<IActionResult> OnPost()
         {
-            string fileName = "Photos/" + Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(Upload.FileName));
+            string fileName = "Publications/" + Path.ChangeExtension(Path.GetRandomFileName(), Path.GetExtension(Upload.FileName));
             MyBlobResponseModel? response = await storage.UploadAsync(Upload, fileName);
-            Publication.PubThumbImage = response.Blob.Uri;
-            Publication.DateUploaded = DateTime.Now;
-            Publication.UploadedBy = "Admin";
+            Publication.PubUploadUrl = response.Blob.Uri;
 
             pubDb.AddPublication(Publication);
             return RedirectToPage("AllPublications");

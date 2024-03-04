@@ -1,4 +1,4 @@
-﻿@* @page
+﻿@page "{Id:int?}"
 @model NddcWebsiteCMS.Pages.Home.Updates.EditUpdatesModel
 @{
 }
@@ -23,9 +23,10 @@
         <div class="card-body">
             <form method="post" enctype="multipart/form-data">
                 <div class="row">
+                    <input type="text" class="form-control bg-light border-0" asp-for="@Model.Update.Id" hidden="true">
                     <div class="col-12">
                         <label for="compnayNameinput" class="form-label">Type of Update  </label>
-                        <select class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
+                        <select asp-for="@Model.Update.UpdateType" class="form-select bg-light border-0 mb-3" aria-label="Updates Type">
                             <option selected="None">Select</option>
                             <option value="Project">Project </option>
                             <option value="Program">Program</option>
@@ -76,7 +77,8 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Description Image (678 x 453 px)</label>
-                            <input type="file" asp-for="@Model.Update.DescriptionImage" class="form-control bg-light border-0" id="customFile" />
+                            <input type="text" class="form-control bg-light border-0" asp-for="@Model.Update.DescriptionImage" hidden="true">
+                            <input type="file" asp-for="@Model.DescUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
@@ -89,7 +91,8 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Challenge Image (678 x 453 px)</label>
-                            <input type="file" asp-for="@Model.Update.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
+                            <input type="text" class="form-control bg-light border-0" asp-for="@Model.Update.ChallengeImage" hidden="true">
+                            <input type="file" asp-for="@Model.CommChallengeUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
@@ -102,6 +105,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Impact Image (678 x 453 px)</label>
+                            <input type="text" class="form-control bg-light border-0" asp-for="@Model.Update.ImpactImage" hidden="true">
                             <input type="file" asp-for="@Model.ImpactUpload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
@@ -157,4 +161,3 @@
     </script>
 }
 
- *@

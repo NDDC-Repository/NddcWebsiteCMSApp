@@ -31,12 +31,12 @@
                             <input type="text" asp-for="@Model.Publication.PubTitle" class=" form-control bg-light border-0" placeholder="Enter Publications Title (75 char.)" id="firstNameinput" maxlength="75">
                     </div>
                 </div><!--end col-->
-                    <div class="col-12">
+                  @*   <div class="col-12">
                         <div class="mb-3">
                             <label for="lastNameinput" class="form-label">Publications Summary</label>
                             <input class="form-control bg-light border-0" asp-for="@Model.Publication.PubSummary"  placeholder="Enter Publications Summary (280 char.)" id="exampleFormControlTextarea5" rows="3" maxlength="280">
                         </div>
-                    </div><!--end col-->
+                    </div> *@<!--end col-->
 
                 @* <div class="col-12">
                     <div class="mb-3">
@@ -48,33 +48,33 @@
                     </div>
                 </div><!--end col--> *@
 
-                <div class="col-12">
+               @*  <div class="col-12">
                     <div class="mb-3">
                         <label class="form-label" for="customFile">Add Publication Image  (255 x 165 px)</label>
                             <input type="file" asp-for="@Model.Publication.PubThumbImage"  class="form-control bg-light border-0" id="customFile" />
                         </div>
-                </div>
+                </div> *@
                     <div class="col-12">
                         <div class="mb-3">
-                            <label for="basic-url">Upload Publications URL</label>
+                            <label for="basic-url">Upload Publications</label>
                             <div class="input-group mb-3">
-                                <input type="file" asp-for="@Model.Publication.PubUploadUrl" class="form-control bg-light border-0" id="basic-url" aria-describedby="basic-addon3">
+                                <input type="file" asp-for="@Model.Upload" class="form-control bg-light border-0" id="basic-url" aria-describedby="basic-addon3">
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    @* <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Date Uploaded</label>
                             <input type="date" asp-for="@Model.Publication.DateUploaded" class="form-control bg-light border-0" id="firstNameinput">
                         </div>
-                    </div><!--end col-->
-                    <div class="col-12">
+                    </div> *@<!--end col-->
+                    @* <div class="col-12">
                         <div class="mb-3">
                             <label for="firstNameinput" class="form-label">Uploaded By</label>
                             <input type="text" asp-for="@Model.Publication.UploadedBy" class="form-control bg-light border-0" id="firstNameinput" maxlength="75">
                         </div>
-                    </div><!--end col-->
+                    </div> *@<!--end col-->
             </div>
             <div class="col-lg-12">
                     <div class="text-end">

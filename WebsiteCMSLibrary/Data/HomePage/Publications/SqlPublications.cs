@@ -23,15 +23,15 @@ namespace WebsiteCMSLibrary.Data.HomePage.Publications
             pub.DateUploaded = DateTime.Now;
             pub.UploadedBy = "Admin";
 
-            db.SaveData("Insert Into Publications (PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded, UploadedBy) values(@PubTitle, @PubSummary, @PubThumbImage, @PubUploadUrl, @DateUploaded, @UploadedBy)", new { pub.PubTitle, pub.PubSummary, pub.PubUploadUrl, pub.DateUploaded, pub.UploadedBy }, connectionStringName, false);
+            db.SaveData("Insert Into Publications (PubTitle, PubUploadUrl, DateUploaded, UploadedBy) values(@PubTitle, @PubUploadUrl, @DateUploaded, @UploadedBy)", new { pub.PubTitle, pub.PubUploadUrl, pub.DateUploaded, pub.UploadedBy }, connectionStringName, false);
         }
         public List<MyPublicationModel> AllPublications()
         {
-            return db.LoadData<MyPublicationModel, dynamic>("Select PubId, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Order By PubId DESC", new { }, connectionStringName, false).ToList();
+            return db.LoadData<MyPublicationModel, dynamic>("Select PubId, PubTitle, PubUploadUrl, DateUploaded, UploadedBy From Publications Order By PubId DESC", new { }, connectionStringName, false).ToList();
         }
 		public MyTenderModel ViewPublicationDetails(int Id)
 		{
-			return db.LoadData<MyTenderModel, dynamic>("Select PubId, PubTitle, PubSummary, PubThumbImage, PubUploadUrl, DateUploaded From Publications Where PubId = @Id", new { PubId = Id }, connectionStringName, false).FirstOrDefault();
+			return db.LoadData<MyTenderModel, dynamic>("Select PubId, PubTitle, PubUploadUrl, DateUploaded From Publications Where PubId = @Id", new { PubId = Id }, connectionStringName, false).FirstOrDefault();
 		}
 		public void DeletePublication(int id)
         {
@@ -39,7 +39,7 @@ namespace WebsiteCMSLibrary.Data.HomePage.Publications
         }
         public void EditPublication(MyPublicationModel pub)
         {
-            db.SaveData("Update Publications Set PubTitle = @PubTitle, PubSummary = @PubSummary, PubThumImage = @PubThumbImage, PubUploadUrl = @PubUploadUrl Where PubId = @PubId", new { pub.PubTitle, pub.PubSummary, pub.PubThumbImage, pub.PubUploadUrl, pub.PubId }, connectionStringName, false);
+            db.SaveData("Update Publications Set PubTitle = @PubTitle, PubUploadUrl = @PubUploadUrl Where PubId = @PubId", new { pub.PubTitle, pub.PubUploadUrl, pub.PubId }, connectionStringName, false);
         }
     }
 }

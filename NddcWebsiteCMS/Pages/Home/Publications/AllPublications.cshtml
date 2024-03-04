@@ -37,13 +37,13 @@
                 <div class="col-sm-6 col-xl-3">
                 <!-- Simple card -->
                         <div class="card bg-light">
-                        <img class="card-img-top img-fluid" src="/images/small/img-1.jpg" alt="Card image cap">
+                        @* <img class="card-img-top img-fluid" src="/images/small/img-1.jpg" alt="Card image cap"> *@
                         <div class="card-body">
                             <h4 class="card-title mb-2">@item.PubTitle</h4>
                             <p class="fs-10">@item.PubSummary</p>
                             <p class="text-muted fs-12 mb-0">Uploaded By: @item.UploadedBy</p>
                             <p class="text-muted fs-12 mb-0">Date Uploaded:@item.DateUploaded</p>
-                                    <a href="@item.PubUploadUrl" class="fs-10">View Publication <i class="bx bx-down-arrow-alt">@item.PubUploadUrl</i></a>
+                                    <a href="@Model._bucketName@item.PubUploadUrl" class="fs-14" target="_blank">View Publication <i class="bx bx-down-arrow-alt"></i></a>
                             <div class="text-end">
                                 <a asp-page="EditPublications" class="fs-4 p-0 text-primary btn text-center">
                                     <i class="las la-pen-square"></i>

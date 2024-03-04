@@ -9,9 +9,11 @@ namespace NddcWebsiteCMS.Pages.Home.Publications
     {
         private readonly IPublicationsData pubDb;
         public List<MyPublicationModel> Publications { get; set; }
-        public AllPublicatiosModel(IPublicationsData pubDb)
+        public readonly string _bucketName;
+        public AllPublicatiosModel(IPublicationsData pubDb, IConfiguration config)
         {
             this.pubDb = pubDb;
+            _bucketName = config.GetConnectionString("AWSContainerUrl");
         }
         public void OnGet()
         {
