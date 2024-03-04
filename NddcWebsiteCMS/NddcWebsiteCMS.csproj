@@ -8,28 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\Home\Publications\DeletePublications.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\images\team\" />
     <Folder Include="wwwroot\images\news\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\WebsiteCMSLibrary\WebsiteCMSLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\Home\Publications\DeletePublications.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Home\Publications\DeletePublications.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\Home\Publications\DeletePublications.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
