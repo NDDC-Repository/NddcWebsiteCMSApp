@@ -30,10 +30,11 @@
     <div class="card">
             
 
-        <div class="card-body">
+        <div class="card-body">            
+            <div class="row d-flex">
             @foreach (var item in Model.Publications)
                 {
-            <div class="row d-flex">
+
                 <div class="col-sm-6 col-xl-3">
                 <!-- Simple card -->
                         <div class="card bg-light">
@@ -45,10 +46,10 @@
                             <p class="text-muted fs-12 mb-0">Date Uploaded:@item.DateUploaded</p>
                                     <a href="@Model._bucketName@item.PubUploadUrl" class="fs-14" target="_blank">View Publication <i class="bx bx-down-arrow-alt"></i></a>
                             <div class="text-end">
-                                <a asp-page="EditPublications" class="fs-4 p-0 text-primary btn text-center">
+                                        <a asp-page="EditPublications" asp-route-Id="@item.PubId" class="fs-4 p-0 text-primary btn text-center">
                                     <i class="las la-pen-square"></i>
                                 </a>
-                                <a asp-page="DeletePublications" class="fs-4 text-danger btn text-center">
+                                <a asp-page="DeletePublications" asp-route-Id="@item.PubId" class="fs-4 text-danger btn text-center">
                                     <i class="las la-trash-alt"></i>
                                 </a>
                             </div>
@@ -60,8 +61,8 @@
                     </div>
                 </div><!-- end card -->
                 </div>
-            </div>
-            }
+                    }
+                </div>
         </div>
        </div><!-- end card body -->
     </div><!-- end card -->

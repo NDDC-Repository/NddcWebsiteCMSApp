@@ -10,9 +10,11 @@ namespace NddcWebsiteCMS.Pages.Home.Adverts
     {
         private readonly ITendersData tenderDb;
         public List<MyTenderModel> Tenders { get; set; }
-        public TendersModel(ITendersData tenderDb)
+        public readonly string _bucketName;
+        public TendersModel(ITendersData tenderDb, IConfiguration config)
         {
             this.tenderDb = tenderDb;
+            _bucketName = config.GetConnectionString("AWSContainerUrl");
         }
         public void OnGet()
         {
