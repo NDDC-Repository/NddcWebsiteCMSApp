@@ -51,7 +51,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Upload Document</label>
-                            <input type="file" asp-for="@Model.Tender.DocumentUrl" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.Upload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
@@ -60,10 +60,11 @@
                             <label for="citynameInput" class="form-label">Tender Details</label>
                             <input type="hidden" id="editorContent" asp-for="@Model.Tender.Details" />
                             <textarea id="editor">
-
+                                @Model.Tender.Details
                             </textarea>
                         </div>
                     </div><!--end col-->
+                    <!--Editor-->
                     <div class="col-lg-12">
                         <div class="text-end">
                             <button type="submit" class="btn btn-primary">Submit</button>

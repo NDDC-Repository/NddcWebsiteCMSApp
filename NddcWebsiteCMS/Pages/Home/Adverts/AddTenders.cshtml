@@ -20,7 +20,7 @@
 <div class="row justify-content-center">
     <div class="card col-9 border rounded-4 justify-content-center">
         <div class="card-body">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-12">
                         <div class="mb-3">
@@ -51,7 +51,7 @@
                     <div class="col-12">
                         <div class="mb-3">
                             <label class="form-label" for="customFile">Upload Document</label>
-                            <input type="file" asp-for="@Model.Tender.DocumentUrl" class="form-control bg-light border-0" id="customFile" />
+                            <input type="file" asp-for="@Model.Upload" class="form-control bg-light border-0" id="customFile" />
                         </div>
                     </div><!--end col-->
                     <!--Editor-->
