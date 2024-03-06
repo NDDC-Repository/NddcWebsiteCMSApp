@@ -60,5 +60,12 @@ namespace NddcWebsiteCMS.Pages.Home.Updates
 
 			return RedirectToPage("AllUpdates");
 		}
-	}
+        public IActionResult OnPostDelete(int? Id)
+        {
+
+            updateDb.DeleteUpdate(Id.Value);
+
+            return RedirectToPage("AllUpdates");
+        }
+    }
 }
